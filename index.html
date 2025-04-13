@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clear Path App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  
+  <nav class="nav">
+    <h5>Clear Path App</h5>
+    <button id="sidebarToggleBtn" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+  </nav>
+  
+  
+  
+  
+  
+  <aside class="sidebar">
+    <div class="profile">
+      <p id="userName">Naruto</p>
+    </div>
+    <div class="options-box">
+      <div onclick="toggleDarkMode()" class="option">
+        <i id="darkModeIcon" class="fas fa-toggle-off"></i>
+        <a>Dark Mode</a>
+      </div>
+    </div>
+    <div class="options-box">
+      <div onclick="changePage('todo')" class="option">
+         <i class="fas fa-tasks"></i>
+         <a>Todo</a>
+      </div>
+       <div onclick="changePage('Events')" class="option">
+         <i class="fas fa-calendar"></i>
+         <a>Events</a>
+      </div>     
+      <div onclick="changePage('pomodoro')" class="option">
+        <i class="fas fa-tasks"></i>
+        <a>pomodoro</a>
+      </div>
+    </div>
+  </aside>
+  
+  
+
+
+
+
+
+  
+  
+  
+  <main class="main">
+    <div class="active" id="todo">
+      <p>page1</p>
+    </div>
+    <div class="inactive" id="Events">
+      <p>page2</p>
+    </div>
+    <div class="inactive" id="pomodoro">
+      <p>page3</p>
+    </div>
+  </main>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer">
+    footer
+  </footer>
+  
+  
+  <script src="main.js"></script>
+</body>
+</html>
+
+
