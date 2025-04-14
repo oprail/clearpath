@@ -63,11 +63,11 @@
     <div class="page inactive" id="todo">
       
       <div class="create-todo">
-        <p>Add New Task</p>
+        <p class="tool-head">Add New Task</p>
         <input type="text" id="todo-input" placeholder="Type here...">
         <input onclick="addNewTodo()" type="button" value="Add" />
       </div>
-       
+      
       <div class="incomplete">
         <div class="todo">
           <i class="far fa-square"></i>
@@ -113,11 +113,91 @@
     
     
     <div class="page inactive" id="Events">
-      <p>page2</p>
-      <div>
-        newcon
-        <p>morestuff</p>
+      
+      <div class="create-event">
+        <p class="tool-head">Add Event</p>
+        <hr />
+        
+        
+        <div class="event-inputs">
+          
+          <div class="inputs">
+            <p>Event</p>
+            <input oninput="setWordLimit(eventNameInput, 10)" type="text" id="event-name" placeholder="Exam, Presentation etc." />
+            <p>Type</p>
+            <input oninput="setWordLimit(eventTypeInput, 10)" type="text" id="event-type" placeholder="Study, Work etc." />
+          </div>
+          
+          
+          <div class="event-select">
+            <p>Date</p>
+            <input type="date" id="event-date" value="30/" />
+            
+            <p>Color</p>
+            <input type="color" id="event-color">
+            
+          </div>
+          <div class="btn-box">
+            <button onclick="addNewEvent()" class="button" id="eventBtn" type="submit">Add Event</button>
+          </div>
+        </div>
       </div>
+      
+      <div class="events-timeline">
+        <div class="event">
+          <div class="date-box">
+            <p id="event-day">28 March</p>
+            <p id="event-year">2025</p>
+          </div>
+          <div class="event-box">
+            <p id="eventName">Event</p>
+            <p id="eventType">Type</p>
+            
+            
+          </div>
+          <div class="icon-box">
+            
+            <i onclick="deleteEvent(event)" class="fas fa-trash"></i>
+            <i onclick="editEvent(event)" class="fas fa-pen"></i>
+          </div>
+        </div>
+        <div class="event">
+          <div class="date-box">
+            <p id="event-day">28 March</p>
+            <p id="event-year">2025</p>
+          </div>
+          <div class="event-box">
+            <p id="eventName">Event</p>
+            <p id="eventType">Type</p>
+            
+            
+          </div>
+          <div class="icon-box">
+            
+            <i onclick="lo(event)" class="fas fa-trash"></i>
+            <i class="fas fa-pen"></i>
+          </div>
+        </div>
+        <div class="event">
+          <div class="date-box">
+            <p id="event-day">28 March</p>
+            <p id="event-year">2025</p>
+          </div>
+          <div class="event-box">
+            <p id="eventName">Event</p>
+            <p id="eventType">Type</p>
+            
+            
+          </div>
+          <div class="icon-box">
+            
+            <i onclick="lo(event)" class="fas fa-trash"></i>
+            <i class="fas fa-pen"></i>
+          </div>
+        </div>
+        
+      </div>
+      
     </div>
     
     
@@ -141,3 +221,17 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

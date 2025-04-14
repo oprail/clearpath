@@ -5,24 +5,58 @@ const body = document.querySelector("body");
 const todoInput = document.querySelector("#todo-input");
 
 
-// todos
 
+
+
+// todos
 const incompleteTodoBox = document.querySelector(".incomplete");
 const completeTodoBox = document.querySelector(".complete");
 
+// events
+const eventNameInput = document.querySelector("#event-name");
+const eventTypeInput = document.querySelector("#event-type");
+const eventDateInput = document.querySelector("#event-date");
+const eventColorInput = document.querySelector("#event-color");
+const eventsTimeline = document.querySelector(".events-timeline");
 
 
-
+eventDateInput.valueAsDate = new Date();
 
 // variable
-let darkMode = true;
-let letterLimit = 20;
-changeMode();
+let darkMode = false;
+let letterLimit = 2;
+
+
+
+//  ❤❤️❤️❤️❤️❤️❤️
+let months = ["Jan",
+  "Feb",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "Augt",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
+];
+
+
+let tempEvents = [];
+let events = [];
+
+
+window.onload = function() {
+   eventDateInput.valueAsDate = new Date();
+   changeMode();
+}
+
 
 function toggleSidebar() {
    sidebar.classList.toggle("showSidebar");
 }
-
 
 
 function changePage(pageName) {
@@ -76,8 +110,8 @@ function changeMode() {
 
 
 
-function setWordLimit(input) {
-   letterLimit = 20;
+function setWordLimit(input, limit) {
+   letterLimit = limit;
    
    let tempText = input.value;
    let limitedText = tempText.substring(0, letterLimit);
@@ -177,11 +211,159 @@ function deleteTodo(e) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function addNewEvent() {
+   
+  if (
+    eventNameInput.value === ""
+    || eventTypeInput.value ===""
+    || eventDateInput.value ==="") {
+    alert("write suff");
+    return;
+  }
+   
+let date = eventDateInput.value;
+
+
+
+let day = date.substring(8, 33);
+let month = date.substring(5, 7);
+let eventYear = date.substring(0, 4);
+let eventDate = `${day} ${months[month - 1]}`;
+
+
+let fullTime = `${eventYear}${month}${day}`;
+
+
+
+
+   
+   let event = `<div class="date-box" style="border-right: 2px solid ${eventColorInput.value};">
+    <p id="event-day">${eventDate}</p>
+    <p id="event-year">${eventYear}</p>
+  </div>
+  <div class="event-box">
+    <p id="eventName">${eventNameInput.value}</p>
+    <p id="eventType">${eventTypeInput.value}</p>
+  </div>
+  <div class="icon-box">
+    <i onclick="deleteEvent(event)" class="fas fa-trash"></i>
+    <i onclick="editEvent(event)" class="fas fa-pen"></i>
+  </div>`;
+   
+   
+   
+   let eventDiv = document.createElement("div");
+   eventDiv.classList.add("event");
+   eventDiv.innerHTML = event;
+   
+   let newEvent = {
+     eventEl : eventDiv,
+     eventDate : fullTime,
+   }
+   
+   sortEvents(newEvent);
+   
+   
+}
+
+
+
+function sortEvents(newEvent) {
+  let tempEvents = [...events];
+  tempEvents.push(newEvent);
+  events = [];
+  
+  while (tempEvents.length > 0) {
+    let biggerDate = tempEvents.reduce((pre, curr) => {
+      return pre.eventDate > curr.eventDate ? pre : curr;
+    });
+    
+    tempEvents.splice(tempEvents.indexOf(biggerDate), 1);
+    events.push(biggerDate);
+  }
+  
+  // console.log("sorted list", events);
+  
+  displayTimeline()
+}
+
+function displayTimeline() {
+   
+   events.forEach((event) => {
+     eventsTimeline.prepend(event.eventEl);
+   })
+}
+
+
+
+// eventNameInput.value
+// eventTypeInput.value
+// eventDateInput.value
+// eventColorInput.value
+
+function deleteEvent(e) {
+   
+   let confirmRemoval = confirm("This Can't be reversed");
+   
+   if (!confirmRemoval) return;
+   
+   let target = e.target.parentElement.parentElement;
+   
+   events.forEach((event) => {
+     
+    if (event.eventEl === target){
+       
+       events.splice(events.indexOf(event), 1);
+       target.remove();
+       
+     }
+   })
+   
+   
+   
+}
+function editEvent(e) {
+   
+   let confirmRemoval = confirm("Do you want to delete this and add new");
+   
+   if (!confirmRemoval) return;
+   
+   let target = e.target.parentElement.parentElement;
+   
+   eventNameInput.value = target.querySelector("#eventName").innerText;
+   eventTypeInput.value = target.querySelector("#eventType").innerText;
+   
+   
+   
+   events.splice(events.indexOf(event), 1);
+   target.remove();
+   
+   
+}
+
+
+
 // event listneres
 todoInput.addEventListener("input", () => {
-   setWordLimit(todoInput);
+   setWordLimit(todoInput, 20);
 });
-
 incompleteTodoBox.addEventListener("click",(e) => {
    checkTodo(e);
 });
