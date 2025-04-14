@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
   
   <nav class="nav">
@@ -15,77 +17,121 @@
     <button id="sidebarToggleBtn" onclick="toggleSidebar()">
       <i class="fas fa-bars"></i>
     </button>
-    
   </nav>
   
   
-  
-  
-  
   <aside class="sidebar">
+    
     <div class="profile">
       <p id="userName">Naruto</p>
     </div>
+    
     <div class="options-box">
       <div onclick="toggleDarkMode()" class="option">
         <i id="darkModeIcon" class="fas fa-toggle-off"></i>
         <a>Dark Mode</a>
       </div>
     </div>
+    
     <div class="options-box">
+      
       <div onclick="changePage('todo')" class="option">
-         <i class="fas fa-tasks"></i>
-         <a>Todo</a>
+        <i class="fas fa-tasks"></i>
+        <a>Todo</a>
       </div>
-       <div onclick="changePage('Events')" class="option">
-         <i class="fas fa-calendar"></i>
-         <a>Events</a>
-      </div>     
+      <div onclick="changePage('Events')" class="option">
+        <i class="fas fa-calendar"></i>
+        <a>Events</a>
+      </div>
       <div onclick="changePage('pomodoro')" class="option">
         <i class="fas fa-tasks"></i>
         <a>pomodoro</a>
       </div>
+      <div onclick="changePage('page4')" class="option">
+        <i class="fas fa-tasks"></i>
+        <a>page4</a>
+      </div>
+      
     </div>
+    
   </aside>
   
   
-
-
-
-
-
-  
-  
-  
+  <!-- Main content -->
   <main class="main">
-    <div class="active" id="todo">
-      <p>page1</p>
-    </div>
-    <div class="inactive" id="Events">
+    
+    <div class="page inactive" id="todo">
+      
+      <div class="create-todo">
+        <p>Add New Task</p>
+        <input type="text" id="todo-input" placeholder="Type here...">
+        <input onclick="addNewTodo()" type="button" value="Add" />
+      </div>
+       
+      <div class="incomplete">
+        <div class="todo">
+          <i class="far fa-square"></i>
+          <p>School work</p>
+        </div>
+        <div class="todo">
+          <i class="far fa-square"></i>
+          <p>12345678901234567890</p>
+        </div>
+        <div class="todo">
+          <i class="far fa-square"></i>
+          <p>daily work</p>
+        </div>
+        <div class="todo">
+          <i class="far fa-check-square"></i>
+          <p>hard work</p>
+        </div>
+      </div>
+      
+      
+      <div class="complete">
+        <div class="todo">
+          <i class="far fa-square"></i>
+          <p>School work</p>
+        </div>
+        <div class="todo">
+          <i class="far fa-square"></i>
+          <p>home work</p>
+        </div>
+        <div class="todo">
+          <i class="far fa-square"></i>
+          <p>daily work</p>
+        </div>
+        <div class="todo">
+          <i class="far fa-check-square"></i>
+          <p>hard work</p>
+        </div>
+      </div>
+      
+    </div> <!-- page end -->
+    
+    
+    
+    
+    <div class="page inactive" id="Events">
       <p>page2</p>
+      <div>
+        newcon
+        <p>morestuff</p>
+      </div>
     </div>
-    <div class="inactive" id="pomodoro">
+    
+    
+    
+    
+    <div class="page inactive" id="pomodoro">
       <p>page3</p>
     </div>
+    <div class="page inactive" id="page4">
+      <p>page4</p>
+    </div>
+    
   </main>
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <footer class="footer">
     footer
   </footer>
@@ -93,6 +139,5 @@
   
   <script src="main.js"></script>
 </body>
+
 </html>
-
-

@@ -27,6 +27,7 @@ nav {
 }
 
 #sidebarToggleBtn {
+   display: none;
    font-size: 1.5rem;
    background: transparent;
    border: none;
@@ -47,7 +48,6 @@ aside {
   height: calc(100vh - 60.5px);
 }
 .profile {
-   /* border: 1px solid red; */
    padding: 1.5rem 1rem;
    background: linear-gradient(#3185FC, #F7F7F7);
 }
@@ -56,11 +56,6 @@ aside {
   color: #fff;
   font-size: 1.5em;
 }
-
-
-
-
-
 
 
 .options-box {
@@ -75,9 +70,6 @@ aside {
 .option i {
    margin-right: 0.5rem;
 }
-
-
-
 
 
 
@@ -97,28 +89,70 @@ footer {
 }
 
 
+/* pages */
+.page {
+   display: none;
+}
+.page.active {
+   display: block;
+}
+#todo.active {
+   display: grid;
+}
+#todo {
+   grid-template-columns: 1fr 1fr;
+   grid-template-areas: 
+   "create create"
+   "incomplete complete";
+}
+
+#todo .create-todo {
+   grid-area: create;
+   font-size: 1.5em;
+   margin-bottom:1rem;
+}
+.create-todo input[type=text] {
+   font-size: 1em;
+   width: 40%;
+   height: 47%;
+   margin: 1rem 0;
+   padding: 0 0.5rem;
+   outline: 0;
+   border: 0;
+   border-bottom: 1.5px solid black;
+}
+.create-todo input[type=button] {
+   font-size: 1em;
+   padding:0 0.8rem;
+   margin: 1rem 0;
+   height: 50%;
+}
 
 
 
 
 
 
+#todo .incomplete {
+   grid-area: incomplete;
+   background: #FFD6D6;
+}
+.incomplete .todo,.complete .todo {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 1rem;
+   
+}
 
+.todo i {
+   margin-right: 1rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#todo .complete {
+  grid-area: complete;
+  background: #B9FFBB;
+}
 
 
 
@@ -137,6 +171,9 @@ footer {
      "main"
      "footer";
    }
+   #sidebarToggleBtn {
+     display: block;
+   }
    aside {
      position: fixed;
      width: 300px;
@@ -148,6 +185,14 @@ footer {
      left: 0px;
      transition: left 0.39s ease-out;
    } 
+   
+   #todo {
+   grid-template-columns: 1fr;
+   grid-template-areas: 
+   "create"
+   "incomplete"
+   "complete";
+   }
 }
 
 
@@ -172,4 +217,18 @@ footer {
   background: #393936;
 }
 
-.darkMode
+.darkMode #todo .incomplete {
+   background: #5C1919;
+}
+.darkMode #todo .complete {
+   background: #195C21;
+}
+
+.darkMode .create-todo input[type=text] {
+   border-bottom: 1.5px solid white;
+   background: transparent;
+   color: #fff;
+}
+.darkMode .create-todo input[type=button] {
+   
+}
