@@ -19,6 +19,11 @@ const eventDateInput = document.querySelector("#event-date");
 const eventColorInput = document.querySelector("#event-color");
 const eventsTimeline = document.querySelector(".events-timeline");
 
+// popup
+const popup = document.querySelector(".popup");
+const subPopup = document.querySelector(".subPopup");
+
+
 // Sllybus
 const subjectNameInput = document.querySelector("#subject-name");
 
@@ -330,6 +335,18 @@ function editEvent(e) {
    events.splice(events.indexOf(event), 1);
    target.remove();
    
+}
+
+
+
+// popup 
+function showPopup() {
+   subPopup.style.display ="none";
+   popup.classList.remove("hide");
+}
+function hidePopup() {
+   popup.classList.add("hide");
+   subPopup.style.display ="block"
 }
 
 

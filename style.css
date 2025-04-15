@@ -275,6 +275,7 @@ hr {
    align-items: center;
 }
 
+/* pop up to add new topic */
 
 
 
@@ -485,3 +486,7 @@ hr {
 
 
 
+
+.hide {
+  display: none;
+}

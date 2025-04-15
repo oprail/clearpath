@@ -224,12 +224,12 @@
       
       <p>Sllybus</p>
       <div class="create-box">
-        <p class="tool-head">Add Subject</p>
+        <p class="tool-head">Add Sllybus</p>
         <hr />
         <div class="create-inputs">
           
-          <div class="inputs">
-            <p>Event</p>
+          <div class="inputs subPopup">
+            <p>subject</p>
             <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Exam, Presentation etc." />
             
             <p>Color</p>
@@ -240,6 +240,22 @@
             </div>
           </div>
           
+          <div class="popup hide">
+            
+            <div class="inputs">
+              <p>Chapter</p>
+              <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Chapetrs, Topics etc." />
+              <p>Related Link</p>
+              <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Lecture,Notes, pdf etc." />
+              <div class="btn-box">
+                <button onclick="hidePopup()" class="button" id="subjectBtn" type="submit">Close</button>
+                <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Add</button>
+              </div>
+              
+            </div>
+            
+            
+          </div>
           
           
           
@@ -250,10 +266,9 @@
       <div class="subjects-container">
         
         <div class="subject">
-          
           <div class="sub-info">
             <p class="subjectName">Math</p>
-            <button class="button" type="submit"><i class="fas fa-plus"></i></button>
+            <button onclick="showPopup(event)" class="button" type="submit"><i class="fas fa-plus"></i></button>
           </div>
           
           <div class="chapter-container">
@@ -406,6 +421,21 @@
   <footer class="footer">
     footer
   </footer>
+  
+  <div class="popup active">
+    
+    <div class="inputs">
+      <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Chapetrs, Topics etc." />
+      <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Related Link" />
+      <div class="btn-box">
+        <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Close</button>
+        <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Add</button>
+      </div>
+      
+    </div>
+    
+    
+  </div>
   
   
   <script src="main.js"></script>
