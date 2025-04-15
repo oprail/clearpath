@@ -162,21 +162,21 @@ footer {
   display: block;
 } */
 
-.create-event {
+.create-box {
    background: #F1F1F1;
    padding: 1rem;
    border-radius: 0.5rem;
    
 }
 
-.event-inputs {
+.create-inputs {
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-template-areas:
    "inputs selects";
 }
 
-.event-inputs .inputs {
+.create-inputs .inputs {
    grid-area: inputs;
    display: flex;
    flex-direction: column;
@@ -186,11 +186,11 @@ footer {
 }
 
 
-.event-inputs .event-select {
+.create-inputs .event-select {
    grid-area: selects;
 }
 
-.create-event input {
+.create-box input {
     background: #FFFFFE;
     width: 90%;
     font-size: 0.8em;
@@ -267,11 +267,6 @@ hr {
 }
 
 
-
-
-
-
-
 .event .icon-box {
    width: 20%;
    font-size: 1em;
@@ -283,7 +278,47 @@ hr {
 
 
 
+/* working on sllyBus */
+#sllybus {
+   display: block;
+}
+.subjects-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   background: #A1A9FF;
+   padding: 1rem;
+   gap: 1rem;
+}
+.subject {
+   background: #FFE6A1;
+   /* display: flex; */
+   /* justify-content: start; */
+   /* align-items: center; */
+   
+}
 
+.subject .sub-info {
+   display: flex; 
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 0.5rem ;
+}
+
+
+.subject .sub-info button {
+   width: 2rem;
+   height: 2rem;
+   font-size: 1.2em;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.subject .sub-info .subjectName {
+   
+   font-size: 2rem;
+   
+}
 
 
 
@@ -326,7 +361,7 @@ hr {
    "complete";
    }
    
-   .event-inputs {
+   .create-inputs {
      grid-template-columns: 1fr;
      grid-template-areas: 
      "inputs"

@@ -43,9 +43,9 @@
         <i class="fas fa-calendar"></i>
         <a>Events</a>
       </div>
-      <div onclick="changePage('pomodoro')" class="option">
+      <div onclick="changePage('sllybus')" class="option">
         <i class="fas fa-tasks"></i>
-        <a>pomodoro</a>
+        <a>Sllybus</a>
       </div>
       <div onclick="changePage('page4')" class="option">
         <i class="fas fa-tasks"></i>
@@ -114,12 +114,12 @@
     
     <div class="page inactive" id="Events">
       
-      <div class="create-event">
+      <div class="create-box">
         <p class="tool-head">Add Event</p>
         <hr />
         
         
-        <div class="event-inputs">
+        <div class="create-inputs">
           
           <div class="inputs">
             <p>Event</p>
@@ -203,9 +203,97 @@
     
     
     
-    <div class="page inactive" id="pomodoro">
-      <p>page3</p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- working on sllybus -->
+    
+    <div class="page inactive" id="sllybus">
+      
+      <p>Sllybus</p>
+      <div class="create-box">
+        <p class="tool-head">Add Subject</p>
+        <hr />
+        <div class="create-inputs">
+          
+          <div class="inputs">
+            <p>Event</p>
+            <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Exam, Presentation etc." />
+            
+            <p>Color</p>
+            <input type="color" id="subject-color">
+            
+            <div class="btn-box">
+              <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Add Event</button>
+            </div>
+          </div>
+          
+          
+          
+          
+        </div>
+      </div>
+      
+      
+      <div class="subjects-container">
+        
+        <div class="subject">
+          
+          <div class="sub-info">
+            <p class="subjectName">Math</p>
+            <button class="button" type="submit"><i class="fas fa-plus"></i></button>
+          </div>
+         
+          
+         
+         
+          
+          
+        </div>
+        
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
     </div>
+    
+    
+    <!-- Top working on sllybus -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="page inactive" id="page4">
       <p>page4</p>
     </div>
@@ -224,14 +312,26 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+<!-- heloo
+        <div class="subject">
+          
+          <div class="sub-info">
+            <p class="subjectName">Math</p>
+            <p>Rivesed . 2X</p>
+            <a href"https://meblank.netlify.app/">link</a>
+          </div>
+          <div class="icons">
+            
+            <i class="far fa-square"></i>
+            
+            <i class="fas fa-book"></i>
+            
+            <i onclick="lo260(event)" class="fas fa-trash"></i>
+          </div>
+          
+          
+          
+          
+          
+        </div>
+-->

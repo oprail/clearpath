@@ -19,12 +19,19 @@ const eventDateInput = document.querySelector("#event-date");
 const eventColorInput = document.querySelector("#event-color");
 const eventsTimeline = document.querySelector(".events-timeline");
 
+// Sllybus
+const subjectNameInput = document.querySelector("#subject-name");
 
-eventDateInput.valueAsDate = new Date();
+
 
 // variable
 let darkMode = false;
 let letterLimit = 2;
+
+
+
+
+
 
 
 
@@ -42,10 +49,20 @@ let months = ["Jan",
   "Nov",
   "Dec"
 ];
-
-
 let tempEvents = [];
 let events = [];
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 window.onload = function() {
@@ -104,12 +121,6 @@ function changeMode() {
    }
 }
 
-
-
-
-
-
-
 function setWordLimit(input, limit) {
    letterLimit = limit;
    
@@ -167,8 +178,6 @@ function checkTodo(e) {
 }
 
 
-
-
 function unCheckTodo(e) {
    
    
@@ -200,32 +209,6 @@ function deleteTodo(e) {
    }
    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function addNewEvent() {
@@ -284,7 +267,6 @@ let fullTime = `${eventYear}${month}${day}`;
 }
 
 
-
 function sortEvents(newEvent) {
   let tempEvents = [...events];
   tempEvents.push(newEvent);
@@ -310,13 +292,6 @@ function displayTimeline() {
      eventsTimeline.prepend(event.eventEl);
    })
 }
-
-
-
-// eventNameInput.value
-// eventTypeInput.value
-// eventDateInput.value
-// eventColorInput.value
 
 function deleteEvent(e) {
    
@@ -355,8 +330,35 @@ function editEvent(e) {
    events.splice(events.indexOf(event), 1);
    target.remove();
    
-   
 }
+
+
+// Working On Sllybus 
+
+
+
+function addNewSubject() {
+   console.log("new subject");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -376,3 +378,11 @@ incompleteTodoBox.addEventListener("dblclick", (e) => {
 completeTodoBox.addEventListener("dblclick", (e) => {
    deleteTodo(e);
 });
+
+// new
+
+
+
+
+
+
