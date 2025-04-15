@@ -290,18 +290,16 @@ hr {
    gap: 1rem;
 }
 .subject {
-   background: #FFE6A1;
-   /* display: flex; */
-   /* justify-content: start; */
-   /* align-items: center; */
-   
+   background: #F1F1F1;
+   border-radius: 0.5rem;
 }
 
 .subject .sub-info {
    display: flex; 
    justify-content: space-between;
    align-items: center;
-   padding: 0 0.5rem ;
+   padding: 0.5rem ;
+  
 }
 
 
@@ -321,8 +319,42 @@ hr {
 }
 
 
+.chapter-container {
+   background: #F8F8F8;
+   padding: 0.2rem 0.5rem;
+   border-bottom-left-radius: 0.5rem;
+   border-bottom-right-radius: 0.5rem;
+}
+.chapter {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin: 0.3rem 0;
+   border-radius: 0.5rem;
+}
+.chapter-info {
+   padding: 0.5rem;
+   font-size: 1.2rem;
+   border-radius: 0.5rem;
+}
 
+.chapter-info .revised {
+   font-size: 0.6rem;
+   color: #00AD06;
+}
 
+.chapter-info a {
+   color: blue;
+   font-size: 0.9rem;
+   
+}
+.chapter .icons {
+   width: 30%;
+   font-size: 1.2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
 
 
 
@@ -370,6 +402,9 @@ hr {
    .events-timeline {
      width: auto;
    }
+   .subjects-container {
+     grid-template-columns: 1fr;
+   }   
 }
 
 
