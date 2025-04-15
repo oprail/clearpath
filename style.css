@@ -128,11 +128,6 @@ footer {
    height: 50%;
 }
 
-
-
-
-
-
 #todo .incomplete {
    grid-area: incomplete;
    background: #FFD6D6;
@@ -166,7 +161,7 @@ footer {
    background: #F1F1F1;
    padding: 1rem;
    border-radius: 0.5rem;
-   
+   margin: 0.5rem 0;
 }
 
 .create-inputs {
@@ -275,9 +270,6 @@ hr {
    align-items: center;
 }
 
-/* pop up to add new topic */
-
-
 
 /* working on sllyBus */
 #sllybus {
@@ -286,12 +278,12 @@ hr {
 .subjects-container {
    display: grid;
    grid-template-columns: 1fr 1fr;
-   background: #A1A9FF;
+   background: #F1F1F1;
    padding: 1rem;
    gap: 1rem;
 }
 .subject {
-   background: #F1F1F1;
+   background: #fff;
    border-radius: 0.5rem;
 }
 
@@ -301,6 +293,14 @@ hr {
    align-items: center;
    padding: 0.5rem ;
   
+}
+
+.subject .sub-icon {
+   width: 30%;
+   display: flex;
+   align-items: center;
+   flex-direction: row-reverse;
+   justify-content: space-between;
 }
 
 
@@ -325,6 +325,7 @@ hr {
    padding: 0.2rem 0.5rem;
    border-bottom-left-radius: 0.5rem;
    border-bottom-right-radius: 0.5rem;
+   border-top: 2px solid #3C9FFF
 }
 .chapter {
    display: flex;
@@ -461,15 +462,28 @@ hr {
   color: #000;
 }
 
+.darkMode .create-box {
+   background: #34342E;
+}
 
 
 
+.darkMode .subjects-container {
+   background: #34342E;
+   border-radius: 0.5rem;
+}
+
+.darkMode .subject {
+   background: #2B2B26;
+}
 
 
 
-
-
-
+.darkMode .chapter-container {
+   background: #2B2B26 ;
+   border-top: 2px solid #3C9FFF;
+   color: #fff;
+}
 
 
 

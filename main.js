@@ -26,13 +26,16 @@ const subPopup = document.querySelector(".subPopup");
 
 // Sllybus
 const subjectNameInput = document.querySelector("#subject-name");
+const subjectColorInput = document.querySelector("#subject-color");
+const subjectsContainer = document.querySelector(".subjects-container");
 
-
+const chapterNameInput = document.querySelector("#chapter-name");
+const chapterLinkInput = document.querySelector("#chapter-link");
 
 // variable
-let darkMode = false;
+let darkMode = true;
 let letterLimit = 2;
-
+let subTarget;
 
 
 
@@ -340,13 +343,15 @@ function editEvent(e) {
 
 
 // popup 
-function showPopup() {
+function showPopup(e) {
    subPopup.style.display ="none";
    popup.classList.remove("hide");
+   
+   subTarget = e.target.parentElement.parentElement.parentElement.parentElement;
 }
 function hidePopup() {
    popup.classList.add("hide");
-   subPopup.style.display ="block"
+   subPopup.style.display ="block";
 }
 
 
@@ -355,24 +360,151 @@ function hidePopup() {
 
 
 function addNewSubject() {
-   console.log("new subject");
+   
+   
+   if (subjectNameInput.value === "") {
+    alert("fill the field");
+    return;
+   }
+   
+   
+   let subjectBoxHtml = `<div class="sub-info">
+     <p class="subjectName" style="color: ${subjectColorInput.value};">${subjectNameInput.value}</p><div class="sub-icon">
+   <button onclick="showPopup(event)" class="button" type="submit">
+     <i class="fas fa-plus"></i>
+   </button>
+   <button onclick="deleteSubject(event)" class="button deleteBtn" type="submit">
+     <i class="fas fa-trash">
+      </i>
+    </button>
+</div>
+   </div>
+    <div class="chapter-container">
+    </div>`;
+   
+   
+   let subjectDiv = document.createElement("div");
+   
+   subjectDiv.classList.add("subject");
+   subjectDiv.innerHTML = subjectBoxHtml;
+   
+    subjectsContainer.prepend(subjectDiv);
+}
+
+
+
+function deleteSubject(e) {
+   
+   let target = e.target.parentElement.parentElement.parentElement.parentElement;
+   
+   
+   let confirmRemoval = confirm("subject will be deleted");
+   
+   
+   if (confirmRemoval) {
+     target.remove();
+   }
+   
+}
+
+function addNewChapter(param) {
+   
+   
+   if (chapterNameInput.value === "" || chapterLinkInput.value === "") {
+     alert("fill the fields");
+     return;
+   }
+   
+   
+   
+   let shortDisplayLink = chapterLinkInput.value.substring(0, 15);
+   
+   let chapterContainer = subTarget.querySelector(".chapter-container");
+   
+   let chapterBoxHtml = `<div class="chapter-info">
+     <p class="chapterName">${chapterNameInput.value}</p>
+     <p class="revised" id="0">Rivesed 0x</p>
+     <a href"${chapterLinkInput.value}">${shortDisplayLink}...</a>
+   </div>
+   <div class="icons">
+     <i onclick="chapterCompleted(event)" class="far fa-square"></i>
+     <i onclick="addRevision (event)" class="fas fa-book"></i>
+     <i onclick="deleteChapter(event)" class="fas fa-trash"></i>
+    </div>`;
+   
+   
+   let chapterDiv = document.createElement("div");
+   
+   chapterDiv.classList.add("chapter");
+   chapterDiv.innerHTML = chapterBoxHtml;
+   
+   chapterContainer.prepend(chapterDiv);
+   
 }
 
 
 
 
+function deleteChapter(e) {
+  
+  let target = e.target.parentElement.parentElement;
+  
+  
+  let confirmRemoval = confirm("chapter will be deleted");
+  
+  
+  if (confirmRemoval) {
+    target.remove();
+  }
+}
 
 
 
+function chapterCompleted(e) {
+   
+   let target = e.target.parentElement.parentElement;
+   
+   if (e.target.classList.contains("fa-square")) {
+     e.target.classList.remove("fa-square");
+     e.target.classList.add("fa-check-square");
+     e.target.style.color ="green";
+     target.id = "complete";
+   } else {
+     e.target.classList.remove("fa-check-square");
+     e.target.classList.add("fa-square");  
+     e.target.style.color ="#000";
+     target.id = "incomplete";
+   }
+   
+}
 
+    
 
-
-
-
-
-
-
-
+function addRevision(e) {
+   
+   let msg = "do you want increse revision count";
+   
+    if (!confirm(msg)) {
+      return;
+    }
+   
+   
+   let target = e.target.parentElement.parentElement;
+   
+   
+   let revisedP = target.querySelector(".revised");
+   
+   let reviseCount = parseInt(revisedP.id) + 1;
+   
+   revisedP.id = reviseCount;
+   
+   revisedP.style.fontSize = "0.65rem";
+   
+   revisedP.innerText = `Rivesed ${reviseCount}x`;
+   
+   setTimeout(()=> {revisedP.style.fontSize = "0.6rem";},300);
+   
+}
 
 
 

@@ -195,30 +195,10 @@
             <i class="fas fa-pen"></i>
           </div>
         </div>
-        
       </div>
-      
     </div>
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!-- working on sllybus -->
     
     <div class="page inactive" id="sllybus">
       
@@ -236,7 +216,7 @@
             <input type="color" id="subject-color">
             
             <div class="btn-box">
-              <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Add Event</button>
+              <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Add Subject</button>
             </div>
           </div>
           
@@ -244,20 +224,15 @@
             
             <div class="inputs">
               <p>Chapter</p>
-              <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Chapetrs, Topics etc." />
+              <input oninput="setWordLimit(chapterNameInput, 10)" type="text" id="chapter-name" placeholder="Chapetrs, Topics etc." />
               <p>Related Link</p>
-              <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Lecture,Notes, pdf etc." />
+              <input type="text" id="chapter-link" placeholder="Lecture,Notes, pdf etc." />
               <div class="btn-box">
                 <button onclick="hidePopup()" class="button" id="subjectBtn" type="submit">Close</button>
-                <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Add</button>
+                <button onclick="addNewChapter()" class="button" id="subjectBtn" type="submit">Add</button>
               </div>
-              
             </div>
-            
-            
           </div>
-          
-          
           
         </div>
       </div>
@@ -268,8 +243,18 @@
         <div class="subject">
           <div class="sub-info">
             <p class="subjectName">Math</p>
+          
+          <div class="sub-icon">
+            
             <button onclick="showPopup(event)" class="button" type="submit"><i class="fas fa-plus"></i></button>
+            <button class="button deleteBtn" type="submit">
+              <i onclick="html-273(event)" class="fas fa-trash">
+              </i>
+            </button>
           </div>
+            
+          </div>
+          
           
           <div class="chapter-container">
             
@@ -289,64 +274,7 @@
               </div>
             </div>
             
-            <div class="chapter">
-              <div class="chapter-info">
-                <p class="chapterName">Math</p>
-                <p class="revised">Rivesed . 2X</p>
-                <a href"https://meblank.netlify.app/">https://meblank...</a>
-              </div>
-              <div class="icons">
-                
-                <i class="far fa-square"></i>
-                
-                <i class="fas fa-book"></i>
-                
-                <i onclick="lo260(event)" class="fas fa-trash"></i>
-              </div>
-            </div>
-            <div class="chapter">
-              <div class="chapter-info">
-                <p class="chapterName">Math</p>
-                <p class="revised">Rivesed . 2X</p>
-                <a href"https://meblank.netlify.app/">https://meblank...</a>
-              </div>
-              <div class="icons">
-                
-                <i class="far fa-square"></i>
-                
-                <i class="fas fa-book"></i>
-                
-                <i onclick="lo260(event)" class="fas fa-trash"></i>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        
-        <div class="subject">
-          
-          <div class="sub-info">
-            <p class="subjectName">Math</p>
-            <button class="button" type="submit"><i class="fas fa-plus"></i></button>
-          </div>
-          
-          <div class="chapter-container">
-            
-            <div class="chapter">
-              <div class="chapter-info">
-                <p class="chapterName">Math</p>
-                <p class="revised">Rivesed . 2X</p>
-                <a href"https://meblank.netlify.app/">https://meblank...</a>
-              </div>
-              <div class="icons">
-                
-                <i class="far fa-square"></i>
-                
-                <i class="fas fa-book"></i>
-                
-                <i onclick="lo260(event)" class="fas fa-trash"></i>
-              </div>
-            </div>
+            <!-- here.. -->
             
             <div class="chapter">
               <div class="chapter-info">
@@ -379,37 +307,9 @@
               </div>
             </div>
           </div>
-          
         </div>
-        
-        
       </div>
-      
-      
-      
-      
-      
-      
-      
     </div>
-    
-    
-    <!-- Top working on sllybus -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     <div class="page inactive" id="page4">
@@ -422,49 +322,10 @@
     footer
   </footer>
   
-  <div class="popup active">
-    
-    <div class="inputs">
-      <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Chapetrs, Topics etc." />
-      <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Related Link" />
-      <div class="btn-box">
-        <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Close</button>
-        <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Add</button>
-      </div>
-      
-    </div>
-    
-    
-  </div>
+
   
   
   <script src="main.js"></script>
 </body>
 
 </html>
-
-
-
-<!-- heloo
-        <div class="subject">
-          
-          <div class="sub-info">
-            <p class="subjectName">Math</p>
-            <p>Rivesed . 2X</p>
-            <a href"https://meblank.netlify.app/">link</a>
-          </div>
-          <div class="icons">
-            
-            <i class="far fa-square"></i>
-            
-            <i class="fas fa-book"></i>
-            
-            <i onclick="lo260(event)" class="fas fa-trash"></i>
-          </div>
-          
-          
-          
-          
-          
-        </div>
--->
