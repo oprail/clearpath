@@ -272,9 +272,6 @@ hr {
 
 
 /* working on sllyBus */
-#sllybus {
-   display: block;
-}
 .subjects-container {
    display: grid;
    grid-template-columns: 1fr 1fr;
@@ -360,7 +357,92 @@ hr {
 
 
 
+/* doubt jornal */
+#doubtJournal {
+   display: block;
+}
 
+.doubt-container {
+   
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding: 1rem;
+   gap: 1rem;
+   background: #F1F1F1;
+   border-radius: 0.5rem;
+   
+}
+
+.doubtJournal-create div {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   
+}
+.doubtJournal-create div textarea {
+   width: 90%;
+   padding: 0.5rem;
+   height: 7rem;
+   border-radius: 0.5rem;
+   border: 0.5px solid black;
+   box-shadow: 0px 1px 4px #373737;
+   outline: 0;
+   
+}
+
+
+.doubt {
+   background: #CFD5DF;
+   border-radius: 0.5rem;
+   border-bottom: 1px solid #5E98FF;
+}
+
+.doubt .doubt-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+.doubt .doubt-sub button {
+   width: 2rem;
+   height: 2rem;
+   font-size: 1.2em;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1rem;
+   background: black;
+}
+
+
+.doubt-info {
+   background: #E0E0E0;
+   padding: 0.5rem ;
+   border-bottom-right-radius: 0.5rem;
+   border-bottom-left-radius: 0.5rem;
+   border-top: 1px solid #5E98FF;
+}
+.doubt-info textarea {
+  background: #D6DCE6;
+   width: 93.5%;
+   height: 5rem;
+   padding: 0.5rem ;
+   border-radius: 0.5rem;
+   border: none;
+   outline: 0;
+}
+
+.doubt-info #doubt-qus {
+   
+   height: 2rem;
+}
+.doubt-info div {
+   
+   padding: 0.5rem ;
+   border-radius: 0.5rem;
+}
 
 
 @media (max-width: 800px) {
@@ -407,6 +489,12 @@ hr {
    .subjects-container {
      grid-template-columns: 1fr;
    }   
+   .doubtJournal-create div {
+     display: inline-block;
+   }
+   .doubt-container {
+     grid-template-columns: 1fr;
+   }   
 }
 
 
@@ -443,11 +531,6 @@ hr {
    background: transparent;
    color: #fff;
 }
-.darkMode .create-todo input[type=button] {
-   
-}
-
-
 
 .darkMode .create-event {
    color: #fff;
@@ -467,7 +550,6 @@ hr {
 }
 
 
-
 .darkMode .subjects-container {
    background: #34342E;
    border-radius: 0.5rem;
@@ -477,8 +559,6 @@ hr {
    background: #2B2B26;
 }
 
-
-
 .darkMode .chapter-container {
    background: #2B2B26 ;
    border-top: 2px solid #3C9FFF;
@@ -486,9 +566,33 @@ hr {
 }
 
 
+.darkMode .doubtJournal-create div textarea ,
+.darkMode .doubtJournal-create div input{
+   background: #2B2B26;
+   color: #fff;
+   border: 1px solid grey;
+}
 
+.darkMode .doubt-container {
+   background: #34342E;
+}
+.darkMode .doubt {
+  background: #4F5F7A;
+  border-bottom: 1px solid #0E1D381C;
+}
+.darkMode .doubt a {
+   color: #0095FF
+}
 
+.darkMode .doubt-info {
+   background: #202020;
+}
 
+.darkMode .doubt-info textarea {
+  background: #2B2B26;
+  color: #C9C9C9;
+  border: 1px solid #FFFFFF4D;
+}
 
 
 
@@ -503,4 +607,6 @@ hr {
 
 .hide {
   display: none;
-}
+} 
+
+/* Day 4 */

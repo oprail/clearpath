@@ -20,10 +20,19 @@
   </nav>
   
   
+  
   <aside class="sidebar">
+    
     
     <div class="profile">
       <p id="userName">Naruto</p>
+    </div>
+    
+    <div class="options-box">
+      <div onclick="toggleDarkMode()" class="option">
+        <i class="fas fa-home"></i>
+        <a>Home</a>
+      </div>
     </div>
     
     <div class="options-box">
@@ -40,12 +49,30 @@
         <a>Todo</a>
       </div>
       <div onclick="changePage('Events')" class="option">
-        <i class="fas fa-calendar"></i>
+        <i class="fas fa-calendar-check"></i>
         <a>Events</a>
       </div>
       <div onclick="changePage('sllybus')" class="option">
-        <i class="fas fa-tasks"></i>
+        <i class="fas fa-folder-open"></i>
         <a>Sllybus</a>
+      </div>
+      
+      
+    </div>
+    
+    <div class="options-box">
+      
+      <div onclick="changePage('doubtJournal')" class="option">
+        <i class="fas fa-question"></i>
+        <a> Doubt Journal </a>
+      </div>
+      <div onclick="changePage('attendanceTracker')" class="option">
+        <i class="fas fa-user-check"></i>
+        <a> Attendance Tracker </a>
+      </div>
+      <div onclick="changePage('links')" class="option">
+        <i class="fas fa-paperclip"></i>
+        <a>Links</a>
       </div>
       <div onclick="changePage('page4')" class="option">
         <i class="fas fa-tasks"></i>
@@ -53,6 +80,7 @@
       </div>
       
     </div>
+    
     
   </aside>
   
@@ -243,15 +271,15 @@
         <div class="subject">
           <div class="sub-info">
             <p class="subjectName">Math</p>
-          
-          <div class="sub-icon">
             
-            <button onclick="showPopup(event)" class="button" type="submit"><i class="fas fa-plus"></i></button>
-            <button class="button deleteBtn" type="submit">
-              <i onclick="html-273(event)" class="fas fa-trash">
-              </i>
-            </button>
-          </div>
+            <div class="sub-icon">
+              
+              <button onclick="showPopup(event)" class="button" type="submit"><i class="fas fa-plus"></i></button>
+              <button class="button deleteBtn" type="submit">
+                <i onclick="html-273(event)" class="fas fa-trash">
+                </i>
+              </button>
+            </div>
             
           </div>
           
@@ -312,6 +340,93 @@
     </div>
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="page inactive" id="doubtJournal">
+      
+      <div class="create-box doubtJournal-create">
+        <div>
+          <input type="text" id="doubt-subject" placeholder="subject" />
+          <input type="text" name="" id="doubt-question" placeholder="question" />
+        </div>
+        <div>
+          <textarea id="doubt-doubt" rows="8" cols="40" placeholder="doubt"></textarea>
+          <textarea id="doubt-solution" placeholder="solution"></textarea>
+        </div>
+        <div>
+          <input type="text" id="doubt-solution-link" placeholder="solution link (optional)" />
+          <button onclick="addNewDoubt()" class="button" type="submit">
+            Add Doubt
+          </button>
+        </div>
+      </div>
+      <div class="doubt-container">
+        
+        <div class="doubt">
+          
+          <div class="doubt-sub">
+            <p class="doubtSubjectName">Math</p>
+            <button class="button deleteBtn" type="submit">
+              <i onclick="html-273(event)" class="fas fa-trash"></i>
+            </button>
+          </div>
+          
+          <div class="doubt-info">
+            
+            <textarea id="doubt-qus" readonly>Question : 2 + 2
+    </textarea>
+            <textarea readonly>Doubt : IDK
+    </textarea>
+            <textarea readonly>Solution : 2 + 2 = 4
+    </textarea>
+            <div id="doubtLink">
+              <a href="https://github.com/oprail/learning2025-test">https://github.com/oprail/learning</a>
+            </div>
+            
+          </div>
+          
+          
+        </div>
+        
+        
+      </div>
+      
+      
+      
+      
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="page inactive" id="attendanceTracker">
+      <p>attendanceTracker</p>
+    </div>
+    <div class="page inactive" id="links">
+      <p>Links</p>
+    </div>
+    
+    
+    
+    
+    
     <div class="page inactive" id="page4">
       <p>page4</p>
     </div>
@@ -322,7 +437,7 @@
     footer
   </footer>
   
-
+  
   
   
   <script src="main.js"></script>

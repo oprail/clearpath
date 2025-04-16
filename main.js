@@ -3,27 +3,18 @@ const main = document.querySelector(".main");
 const darkModeIcon = document.querySelector("#darkModeIcon");
 const body = document.querySelector("body");
 const todoInput = document.querySelector("#todo-input");
-
-
-
-
-
 // todos
 const incompleteTodoBox = document.querySelector(".incomplete");
 const completeTodoBox = document.querySelector(".complete");
-
 // events
 const eventNameInput = document.querySelector("#event-name");
 const eventTypeInput = document.querySelector("#event-type");
 const eventDateInput = document.querySelector("#event-date");
 const eventColorInput = document.querySelector("#event-color");
 const eventsTimeline = document.querySelector(".events-timeline");
-
 // popup
 const popup = document.querySelector(".popup");
 const subPopup = document.querySelector(".subPopup");
-
-
 // Sllybus
 const subjectNameInput = document.querySelector("#subject-name");
 const subjectColorInput = document.querySelector("#subject-color");
@@ -31,6 +22,28 @@ const subjectsContainer = document.querySelector(".subjects-container");
 
 const chapterNameInput = document.querySelector("#chapter-name");
 const chapterLinkInput = document.querySelector("#chapter-link");
+
+
+// doubt pagr
+const doubtSubjectInput = document.querySelector("#doubt-subject");
+const doubtQuestionInput = document.querySelector("#doubt-question");
+const doubtInput = document.querySelector("#doubt-doubt");
+const doubtSolutionInput = document.querySelector("#doubt-solution");
+const solutionLinkInput = document.querySelector("#doubt-solution-link");
+const doubtContainer = document.querySelector(".doubt-container");
+
+
+// page
+// const Input = document.querySelector("#");
+
+
+
+
+
+
+
+
+
 
 // variable
 let darkMode = true;
@@ -505,6 +518,70 @@ function addRevision(e) {
    setTimeout(()=> {revisedP.style.fontSize = "0.6rem";},300);
    
 }
+
+
+// Doubt page 
+
+function addNewDoubt() {
+   
+   
+  if (doubtSubjectInput.value === "" 
+  || doubtQuestionInput.value === "" 
+  || doubtInput.value === "" 
+  || doubtSolutionInput.value === "") {
+     
+    alert("fill the fields");
+    return;
+  }
+   
+   
+   
+   let doubtHtml = `<div class="doubt-sub">
+     <p class="doubtSubjectName">${doubtSubjectInput.value}</p>
+     <button onclick="deleteDoubt(event)" class="button" type="submit">
+        <i class="fas fa-trash"></i>
+     </button>
+   </div>
+   <div class="doubt-info">
+     <textarea id="doubt-qus" readonly>Question : ${doubtQuestionInput.value}
+     </textarea>
+     <textarea readonly>Doubt : ${doubtInput.value}
+     </textarea>
+     <textarea readonly>Solution : ${doubtSolutionInput.value}
+     </textarea>
+     <div id="doubtLink">
+       <a href="${solutionLinkInput.value}">${solutionLinkInput.value}</a>
+      </div>
+   </div>`;
+   
+   let doubtDiv = document.createElement("div");
+   doubtDiv.classList.add("doubt");
+   doubtDiv.innerHTML = doubtHtml;
+   doubtContainer.prepend(doubtDiv);
+   
+   
+   doubtSubjectInput.value = "";
+   doubtQuestionInput.value = "";
+   doubtInput.value = "";
+   doubtSolutionInput.value = "";
+   solutionLinkInput.value = "";
+   
+}
+
+
+function deleteDoubt(e) {
+   let target = e.target.parentElement.parentElement.parentElement;
+   
+   let confirmRemoval = confirm("doubt will be deleted");
+   
+   if (confirmRemoval) {
+     target.remove();
+   }
+}
+
+
+
+
 
 
 
