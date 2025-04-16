@@ -419,9 +419,24 @@
     <div class="page inactive" id="attendanceTracker">
       <p>attendanceTracker</p>
     </div>
+    
+    
     <div class="page inactive" id="links">
-      <p>Links</p>
-    </div>
+     <div class="create-box">
+       <p>Title</p>
+        <input oninput="setWordLimit(linkTitleInput, 10)" type="text" id="title-input" placeholder="Write here.." />
+        <p>Link</p>
+        <input type="text" id="link-input" placeholder="Write here.." />
+        <button onclick="saveLink()" class="button" type="submit">Add</button>
+     </div>
+     <div class="link-container">
+       <div class="link">
+         <p>Ti12345678</p>
+         <i onclick="removeLink(event)" class="fas fa-trash"></i>
+         <a href="https://github.com/oprail/learning2025-test">https://github.com/oprail/learning2025-test</a>
+       </div>
+     </div>
+   </div>
     
     
     
@@ -444,3 +459,4 @@
 </body>
 
 </html>
+

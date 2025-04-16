@@ -358,9 +358,7 @@ hr {
 
 
 /* doubt jornal */
-#doubtJournal {
-   display: block;
-}
+
 
 .doubt-container {
    
@@ -443,6 +441,35 @@ hr {
    padding: 0.5rem ;
    border-radius: 0.5rem;
 }
+
+/* link saver page */
+.link-container {
+   background: #F1F1F1;
+   padding: 1rem;
+   border-radius: 0.5rem;
+   margin: 0.5rem 0;
+   
+}
+.link {
+   background: #FFFFFF;
+   padding: 0.7rem 0.5rem ;
+   display: block;
+   font-size: 1.2rem;
+}
+.link a {
+   font-size: 1rem;
+   display: block ;
+   margin-top: 0.3rem;
+   text-decoration: none;
+}
+
+.link p {
+   display: inline;
+   margin-right: 1rem;
+}
+
+/* page */
+
 
 
 @media (max-width: 800px) {
@@ -594,7 +621,16 @@ hr {
   border: 1px solid #FFFFFF4D;
 }
 
-
+.darkMode .link-container {
+   background: #34342E;
+   
+}
+.darkMode .link {
+   background: #242424;
+}
+.darkMode .link a {
+   color: #2099FF;
+}
 
 
 

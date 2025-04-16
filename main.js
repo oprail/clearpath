@@ -33,8 +33,13 @@ const solutionLinkInput = document.querySelector("#doubt-solution-link");
 const doubtContainer = document.querySelector(".doubt-container");
 
 
-// page
-// const Input = document.querySelector("#");
+// link saverpage
+const linkTitleInput = document.querySelector("#title-input");
+const linkInput = document.querySelector("#link-input");
+const linkContainer = document.querySelector(".link-container");
+
+// const Input = document.querySelector("#title-input");
+// const Input = document.querySelector("#title-input");
 
 
 
@@ -583,8 +588,40 @@ function deleteDoubt(e) {
 
 
 
+function saveLink() {
+   
+   
+   if (linkTitleInput.value === "" || linkInput.value === "") {
+     alert("please fill the feilds");
+     return;
+   }
+   
+   
+   let linkHtml = `<p>${linkTitleInput.value}</p><i onclick="removeLink(event)" class="fas fa-trash"></i>
+   <a href="${linkInput.value}">${linkInput.value}</a>`;
+   
+   
+   let linkDiv = document.createElement("div");
+   linkDiv.classList.add("link");
+   linkDiv.innerHTML = linkHtml;
+   linkContainer.prepend(linkDiv);
+   
+   linkTitleInput.value = "";
+   linkInput.value = "";
+   
+}
 
-
+function removeLink(e) {
+   let target = e.target.parentElement;
+   
+   
+  let confirmRemoval = confirm("link will be deleted");
+   
+   if (confirmRemoval) {
+    target.remove();
+   }   
+   
+}
 
 
 
