@@ -41,9 +41,16 @@ const linkContainer = document.querySelector(".link-container");
 // const Input = document.querySelector("#title-input");
 // const Input = document.querySelector("#title-input");
 
+// progress board
 
+const todoProgress = document.querySelector(".todo-progress");
 
-
+// const Progress = document.querySelector(".");
+// const Progress = document.querySelector(".");
+// const Progress = document.querySelector(".");
+// const Progress = document.querySelector(".");
+// const Progress = document.querySelector(".");
+// const Progress = document.querySelector(".");
 
 
 
@@ -179,6 +186,11 @@ function addNewTodo() {
    
    
    incompleteTodoBox.prepend(todoDiv);
+   
+   
+   
+   
+   updateTodoStats();
 }
 
 
@@ -187,7 +199,6 @@ function checkTodo(e) {
    
    
    if (e.target.classList.contains("todo")) {
-     console.log("yes");
      
      let icon = e.target.querySelector("i")
      icon.classList.remove("fa-square");
@@ -199,7 +210,7 @@ function checkTodo(e) {
     completeTodoBox.prepend(e.target);
     
     
-    
+    updateTodoStats();
    }
 }
 
@@ -218,8 +229,9 @@ function unCheckTodo(e) {
     
     // move it
     incompleteTodoBox.prepend(e.target);
-    
    }
+   
+   updateTodoStats();
 }
 
 function deleteTodo(e) {
@@ -234,6 +246,7 @@ function deleteTodo(e) {
      
    }
    
+   updateTodoStats();
 }
 
 
@@ -622,6 +635,49 @@ function removeLink(e) {
    }   
    
 }
+
+
+
+function updateTodoStats() {
+   
+   
+   let totalIncompleteTodo = incompleteTodoBox.querySelectorAll(".todo").length;
+   let totalCompleteTodo = completeTodoBox.querySelectorAll(".todo").length;
+   
+   
+   let compPercent = totalCompleteTodo / (totalIncompleteTodo + totalCompleteTodo) * 100;
+   
+   let incompPercent = totalIncompleteTodo / (totalCompleteTodo + totalIncompleteTodo) * 100;
+   
+   
+   todoProgress.querySelector("p").innerText = `${parseInt(compPercent)}%`;
+   
+   
+   let statsHtml = `<p>Total Tasks : ${totalIncompleteTodo + totalCompleteTodo}</p>
+    <p style="color: red;">Complete : ${totalCompleteTodo}</p>
+    <p style="color: green;">Incomplete : ${totalIncompleteTodo}</p>`;
+   
+    
+    todoProgress.style.background =  `linear-gradient(120deg, #1BFF00 ${compPercent}%, red 0%)`;
+   
+   let statsBox = todoProgress.nextElementSibling;
+   statsBox.innerHTML = statsHtml;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

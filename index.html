@@ -85,22 +85,20 @@
   <!-- Main content -->
   <main class="main">
 
-<div class="progress-board">
-   
-   <div class="wraper">
-     
-     <div class="progress-pie">
-       <p>50%</p>
-     </div>
-     
-   </div>
-   <div class="stats">
-     
-     here comes stats.
-     
-   </div>
-   
-</div>
+<!-- <div class="progress-board">
+  <div class="wraper">
+    <div class="progress-pie">
+      <p>50%</p>
+    </div>
+  </div>
+  <div class="stats">
+    here comes stats.
+  </div>
+</div> -->
+
+
+
+
 
 
 
@@ -131,7 +129,23 @@
     </div>
     
     <div class="page inactive" id="todo">
+    <div class="progress-board">
+      <div class="wraper todo-progress">
+        <div class="progress-pie">
+     <p>0%</p>
+        </div>
+      </div>
+      <div class="stats">
+        <p>Total Tasks : 0</p>
+        <p style="color: red;">Complete : 0</p>
+        <p style="color: green;">Incomplete : 0</p>
+      </div>
+    </div> 
+
+
       <div class="create-todo">
+        
+
         <p class="tool-head">Add New Task</p>
         <input type="text" id="todo-input" placeholder="Type here...">
         <input onclick="addNewTodo()" type="button" value="Add" />
