@@ -3,28 +3,25 @@ const main = document.querySelector(".main");
 const darkModeIcon = document.querySelector("#darkModeIcon");
 const body = document.querySelector("body");
 const todoInput = document.querySelector("#todo-input");
-// todos
+
 const incompleteTodoBox = document.querySelector(".incomplete");
 const completeTodoBox = document.querySelector(".complete");
-// events
+
 const eventNameInput = document.querySelector("#event-name");
 const eventTypeInput = document.querySelector("#event-type");
 const eventDateInput = document.querySelector("#event-date");
 const eventColorInput = document.querySelector("#event-color");
 const eventsTimeline = document.querySelector(".events-timeline");
-// popup
+
 const popup = document.querySelector(".popup");
 const subPopup = document.querySelector(".subPopup");
-// Sllybus
+
 const subjectNameInput = document.querySelector("#subject-name");
 const subjectColorInput = document.querySelector("#subject-color");
 const subjectsContainer = document.querySelector(".subjects-container");
-
 const chapterNameInput = document.querySelector("#chapter-name");
 const chapterLinkInput = document.querySelector("#chapter-link");
 
-
-// doubt pagr
 const doubtSubjectInput = document.querySelector("#doubt-subject");
 const doubtQuestionInput = document.querySelector("#doubt-question");
 const doubtInput = document.querySelector("#doubt-doubt");
@@ -32,47 +29,21 @@ const doubtSolutionInput = document.querySelector("#doubt-solution");
 const solutionLinkInput = document.querySelector("#doubt-solution-link");
 const doubtContainer = document.querySelector(".doubt-container");
 
-
-// link saverpage
 const linkTitleInput = document.querySelector("#title-input");
 const linkInput = document.querySelector("#link-input");
 const linkContainer = document.querySelector(".link-container");
 
-// const Input = document.querySelector("#title-input");
-// const Input = document.querySelector("#title-input");
-
-// progress board
-
 const todoProgress = document.querySelector(".todo-progress");
 
-
-// save data to local storage
-
-
-
-// const Progress = document.querySelector(".");
-// const Progress = document.querySelector(".");
-// const Progress = document.querySelector(".");
-// const Progress = document.querySelector(".");
-// const Progress = document.querySelector(".");
+const userNameP = document.querySelector("#userName");
 
 
 
-
-
-
-// variable
 let darkMode = false;
 let letterLimit = 2;
 let subTarget;
+let userName;
 
-
-
-
-
-
-
-//  ❤❤️❤️❤️❤️❤️❤️
 let months = ["Jan",
   "Feb",
   "March",
@@ -90,13 +61,24 @@ let tempEvents = [];
 let events = [];
 
 
-
 window.onload = function() {
    eventDateInput.valueAsDate = new Date();
+   darkMode = localStorage.getItem("mode") === "true";
    changeMode();
    
    
-   // imp
+   if (localStorage.getItem("userName") === null) {
+     userName = prompt("Type your user name");
+     
+     if (userName === null) {
+       localStorage.setItem("userName", "User");
+     } else {
+       localStorage.setItem("userName", userName);
+     }
+   }
+   userName = localStorage.getItem("userName");
+   userNameP.innerText = userName;
+   
    displayTodoData();
    displaySllybusData();
    displayDoubtData();
@@ -137,17 +119,15 @@ function toggleDarkMode() {
    }
    
    changeMode();
+   localStorage.setItem("mode", darkMode);
 }
-
 function changeMode() {
    
-   if (darkMode) {
+   if (darkMode == true) {
      darkModeIcon.classList.remove("fa-toggle-off");
      darkModeIcon.classList.add("fa-toggle-on");
      
      body.classList.add("darkMode");
-     
-     
    } else {
      darkModeIcon.classList.remove("fa-toggle-on");
      darkModeIcon.classList.add("fa-toggle-off");
@@ -168,9 +148,8 @@ function setWordLimit(input, limit) {
 
 function addNewTodo() {
    
-   
    if (todoInput.value == "") {
-     alert("Write Todo");
+     alert("Write your task");
      return;
    }
    
@@ -186,53 +165,37 @@ function addNewTodo() {
    
    todoDiv.appendChild(todoI);
    todoDiv.appendChild(todoP);
-   
-   
    incompleteTodoBox.prepend(todoDiv);
    
-   
-   
+   todoInput.value = "";
    
    updateTodoStats();
    saveTodoData();
 }
 
-
-
 function checkTodo(e) {
-   
    
    if (e.target.classList.contains("todo")) {
      
      let icon = e.target.querySelector("i")
      icon.classList.remove("fa-square");
      icon.classList.add("fa-check-square");
-    // icon.style.color = "green";
     
-    
-    // move it
     completeTodoBox.prepend(e.target);
-    
     
     updateTodoStats();
     saveTodoData();
    }
 }
 
-
 function unCheckTodo(e) {
    
-   
    if (e.target.classList.contains("todo")) {
-     console.log("yes");
-     
+    
      let icon = e.target.querySelector("i")
      icon.classList.remove("fa-check-square");
      icon.classList.add("fa-square");
-    // icon.style.color = "green";
     
-    
-    // move it
     incompleteTodoBox.prepend(e.target);
    }
    
@@ -258,41 +221,22 @@ function deleteTodo(e) {
 
 
 
-
-
-
-
-
-
-// event
-
-
-
 function addNewEvent() {
    
-  if (
+   if (
     eventNameInput.value === ""
     || eventTypeInput.value ===""
     || eventDateInput.value ==="") {
     alert("write suff");
     return;
-  }
+   }
    
-let date = eventDateInput.value;
-
-
-
-let day = date.substring(8, 33);
-let month = date.substring(5, 7);
-let eventYear = date.substring(0, 4);
-let eventDate = `${day} ${months[month - 1]}`;
-
-
-let fullTime = `${eventYear}${month}${day}`;
-
-
-
-
+   let date = eventDateInput.value;
+   let day = date.substring(8, 33);
+   let month = date.substring(5, 7);
+   let eventYear = date.substring(0, 4);
+   let eventDate = `${day} ${months[month - 1]}`;
+   let fullTime = `${eventYear}${month}${day}`;
    
    let event = `<div class="date-box" style="border-right: 2px solid ${eventColorInput.value};">
     <p id="event-day">${eventDate}</p>
@@ -308,7 +252,6 @@ let fullTime = `${eventYear}${month}${day}`;
   </div>`;
    
    
-   
    let eventDiv = document.createElement("div");
    eventDiv.classList.add("event");
    eventDiv.innerHTML = event;
@@ -318,29 +261,29 @@ let fullTime = `${eventYear}${month}${day}`;
      eventDate : fullTime,
    }
    
+   
+    eventNameInput.value = "";
+    eventTypeInput.value = "";
+   
    sortEvents(newEvent);
-   
-   
 }
 
 
 function sortEvents(newEvent) {
-  let tempEvents = [...events];
-  tempEvents.push(newEvent);
-  events = [];
-  
-  while (tempEvents.length > 0) {
+   let tempEvents = [...events];
+   tempEvents.push(newEvent);
+   events = [];
+   
+   while (tempEvents.length > 0) {
     let biggerDate = tempEvents.reduce((pre, curr) => {
       return pre.eventDate > curr.eventDate ? pre : curr;
     });
     
     tempEvents.splice(tempEvents.indexOf(biggerDate), 1);
     events.push(biggerDate);
-  }
-  
-  // console.log("sorted list", events);
-  
-  displayTimeline()
+   }
+   
+   displayTimeline()
 }
 
 function displayTimeline() {
@@ -360,18 +303,15 @@ function deleteEvent(e) {
    let target = e.target.parentElement.parentElement;
    
    events.forEach((event) => {
-     
     if (event.eventEl === target){
-       
        events.splice(events.indexOf(event), 1);
        target.remove();
-       
      }
    })
    
-   
    saveEventData();
 }
+
 function editEvent(e) {
    
    let confirmRemoval = confirm("Do you want to delete this and add new");
@@ -384,17 +324,13 @@ function editEvent(e) {
    eventTypeInput.value = target.querySelector("#eventType").innerText;
    
    
-   
    events.splice(events.indexOf(event), 1);
    target.remove();
-   
    
    saveEventData();
 }
 
 
-
-// popup 
 function showPopup(e) {
    subPopup.style.display ="none";
    popup.classList.remove("hide");
@@ -408,17 +344,12 @@ function hidePopup() {
 
 
 
-
-// Working On Sllybus 
-
 function addNewSubject() {
-   
    
    if (subjectNameInput.value === "") {
     alert("fill the field");
     return;
    }
-   
    
    let subjectBoxHtml = `<div class="sub-info">
      <p class="subjectName" style="color: ${subjectColorInput.value};">${subjectNameInput.value}</p><div class="sub-icon">
@@ -439,13 +370,11 @@ function addNewSubject() {
    
    subjectDiv.classList.add("subject");
    subjectDiv.innerHTML = subjectBoxHtml;
-   
     subjectsContainer.prepend(subjectDiv);
     
-    
+    subjectNameInput.value = "";
     saveSllybusData();
 }
-
 
 
 function deleteSubject(e) {
@@ -454,7 +383,6 @@ function deleteSubject(e) {
    
    
    let confirmRemoval = confirm("subject will be deleted");
-   
    
    if (confirmRemoval) {
      target.remove();
@@ -465,18 +393,13 @@ function deleteSubject(e) {
 
 function addNewChapter(param) {
    
-   
    if (chapterNameInput.value === "" || chapterLinkInput.value === "") {
-     alert("fill the fields");
+     alert("fill the all fields");
      return;
    }
    
-   
-   
    let shortDisplayLink = chapterLinkInput.value.substring(0, 15);
-   
    let chapterContainer = subTarget.querySelector(".chapter-container");
-   
    let chapterBoxHtml = `<div class="chapter-info">
      <p class="chapterName">${chapterNameInput.value}</p>
      <p class="revised" id="0">Rivesed 0x</p>
@@ -488,13 +411,14 @@ function addNewChapter(param) {
      <i onclick="deleteChapter(event)" class="fas fa-trash"></i>
     </div>`;
    
-   
    let chapterDiv = document.createElement("div");
    
    chapterDiv.classList.add("chapter");
    chapterDiv.innerHTML = chapterBoxHtml;
-   
    chapterContainer.prepend(chapterDiv);
+   
+   chapterNameInput.value = "";
+   chapterLinkInput.value = "";
    
    saveSllybusData();
 }
@@ -504,20 +428,15 @@ function addNewChapter(param) {
 
 function deleteChapter(e) {
   
-  let target = e.target.parentElement.parentElement;
+   let target = e.target.parentElement.parentElement;
+   let confirmRemoval = confirm("chapter will be deleted");
   
+   if (confirmRemoval) {
+     target.remove();
+   }
   
-  let confirmRemoval = confirm("chapter will be deleted");
-  
-  
-  if (confirmRemoval) {
-    target.remove();
-  }
-  
-  saveSllybusData();
+   saveSllybusData();
 }
-
-
 
 function chapterCompleted(e) {
    
@@ -535,11 +454,8 @@ function chapterCompleted(e) {
      target.id = "incomplete";
    }
    
-   
    saveSllybusData();
 }
-
-    
 
 function addRevision(e) {
    
@@ -551,33 +467,21 @@ function addRevision(e) {
    
    
    let target = e.target.parentElement.parentElement;
-   
-   
    let revisedP = target.querySelector(".revised");
-   
    let reviseCount = parseInt(revisedP.id) + 1;
    
    revisedP.id = reviseCount;
-   
    revisedP.style.fontSize = "0.65rem";
-   
    revisedP.innerText = `Rivesed ${reviseCount}x`;
    
    setTimeout(()=> {revisedP.style.fontSize = "0.6rem";},300);
-   
    
    saveSllybusData();
 }
 
 
 
-
-
-
-
-// Doubt page 
 function addNewDoubt() {
-   
    
   if (doubtSubjectInput.value === "" 
   || doubtQuestionInput.value === "" 
@@ -626,7 +530,6 @@ function addNewDoubt() {
 
 function deleteDoubt(e) {
    let target = e.target.parentElement.parentElement.parentElement;
-   
    let confirmRemoval = confirm("doubt will be deleted");
    
    if (confirmRemoval) {
@@ -638,9 +541,7 @@ function deleteDoubt(e) {
 
 
 
-// link saver
 function saveLink() {
-   
    
    if (linkTitleInput.value === "" || linkInput.value === "") {
      alert("please fill the feilds");
@@ -666,8 +567,7 @@ function saveLink() {
 function removeLink(e) {
    let target = e.target.parentElement;
    
-   
-  let confirmRemoval = confirm("link will be deleted");
+   let confirmRemoval = confirm("link will be deleted");
    
    if (confirmRemoval) {
     target.remove();
@@ -678,60 +578,29 @@ function removeLink(e) {
 
 
 
-
-
-
-
-
-
-
-
-
-// progress bar 
 function updateTodoStats() {
-   
    
    let totalIncompleteTodo = incompleteTodoBox.querySelectorAll(".todo").length;
    let totalCompleteTodo = completeTodoBox.querySelectorAll(".todo").length;
    
-   
    let compPercent = totalCompleteTodo / (totalIncompleteTodo + totalCompleteTodo) * 100;
-   
    let incompPercent = totalIncompleteTodo / (totalCompleteTodo + totalIncompleteTodo) * 100;
-   
    
    todoProgress.querySelector("p").innerText = `${parseInt(compPercent)}%`;
    
-   
    let statsHtml = `<p>Total Tasks : ${totalIncompleteTodo + totalCompleteTodo}</p>
-    <p style="color: red;">Complete : ${totalCompleteTodo}</p>
-    <p style="color: green;">Incomplete : ${totalIncompleteTodo}</p>`;
+    <p style="color: green;">Complete : ${totalCompleteTodo}</p>
+    <p style="color: red;">Incomplete : ${totalIncompleteTodo}</p>`;
    
-    
     todoProgress.style.background =  `linear-gradient(120deg, #1BFF00 ${compPercent}%, red 0%)`;
    
    let statsBox = todoProgress.nextElementSibling;
    statsBox.innerHTML = statsHtml;
-   
+  
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// saving data
 function saveTodoData() {
    
   localStorage.removeItem("incompleteTodoData");
@@ -740,47 +609,28 @@ function saveTodoData() {
   localStorage.setItem("incompleteTodoData", incompleteTodoBox.innerHTML);
   localStorage.setItem("completeTodoData", completeTodoBox.innerHTML);
    
-  // displayData();
-   
 }
 function displayTodoData() {
-   
    
   if (localStorage.getItem("incompleteTodoData") === undefined && localStorage.getItem("completeTodoData") === undefined) {
     return;
   }
    
-  console.log("seted")
   incompleteTodoBox.innerHTML = localStorage.getItem("incompleteTodoData");
-   
-   
   completeTodoBox.innerHTML = localStorage.getItem("completeTodoData");
    
 }
 
-
-
-
-
-
-// sllybus data
 function saveSllybusData() {
   
   localStorage.removeItem("sllybusData");
-  
-  
   localStorage.setItem("sllybusData", subjectsContainer.innerHTML);
-  
-  
-  // displayData();
-  
+
 }
 
 function displaySllybusData() {
   
   let data = localStorage.getItem("sllybusData");
-  
-  console.log(data)
   
   if (data === null) {
     return;
@@ -790,26 +640,16 @@ function displaySllybusData() {
   
 }
 
-
-
-// Doubt data
 function saveDoubtData() {
   
   localStorage.removeItem("doubtData");
-  
-  
   localStorage.setItem("doubtData", doubtContainer.innerHTML);
-  
-  
-  // displayData();
-  
+
 }
 
 function displayDoubtData() {
   
   let data = localStorage.getItem("doubtData");
-  
-  console.log(data)
   
   if (data === null) {
     return;
@@ -818,23 +658,16 @@ function displayDoubtData() {
   doubtContainer.innerHTML = data;
 }
 
-// link data
 function saveLinkData() {
   
   localStorage.removeItem("linkData");
-  
-  
   localStorage.setItem("linkData", linkContainer.innerHTML);
-  
-  
-  // displayData();
   
 }
 
 function displayLinkData() {
   
   let data = localStorage.getItem("linkData");
-  
   
   if (data === null) {
     return;
@@ -844,23 +677,16 @@ function displayLinkData() {
 }
 
 
-// event data
 function saveEventData() {
   
   localStorage.removeItem("eventData");
-  
-  
   localStorage.setItem("eventData", eventsTimeline.innerHTML);
-  
-  
-  // displayData();
   
 }
 
 function displayEventData() {
   
   let data = localStorage.getItem("eventData");
-  
   
   if (data === null) {
     return;
@@ -872,16 +698,6 @@ function displayEventData() {
 
 
 
-
-
-
-
-
-
-
-
-
-// event listneres
 todoInput.addEventListener("input", () => {
    setWordLimit(todoInput, 20);
 });
@@ -897,11 +713,4 @@ incompleteTodoBox.addEventListener("dblclick", (e) => {
 completeTodoBox.addEventListener("dblclick", (e) => {
    deleteTodo(e);
 });
-
-// new
-
-
-
-
-
-
+// -gg-

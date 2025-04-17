@@ -2,7 +2,6 @@
   margin:0;
   padding: 0;
 }
-
 body {
   min-height: 100vh;
   display: grid;
@@ -13,19 +12,16 @@ body {
   "sidebar main"
   "sidebar footer";
 }
-
 nav {
   grid-area: navbar ;
   background: #3185FC; 
   top: 0;
   position: sticky;
   padding: 1em;
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 #sidebarToggleBtn {
    display: none;
    font-size: 1.5rem;
@@ -37,27 +33,22 @@ h5 {
   font-size: 1rem;
   color: lavenderblush;
 }
-
-
 aside {
   grid-area: sidebar;
   background: #F7F7F7;
   top: 60.5px;
   position: sticky;
   align-self: start;
-  height: calc(100vh - 60.5px);
+  height: calc(100vh - 51px);
 }
 .profile {
    padding: 1.5rem 1rem;
    background: linear-gradient(#3185FC, #F7F7F7);
 }
-
 #userName {
   color: #fff;
   font-size: 1.5em;
 }
-
-
 .options-box {
    border-radius: 0.5rem;
    margin: 1rem;
@@ -71,8 +62,6 @@ aside {
    margin-right: 0.5rem;
 }
 
-
-
 main {
   grid-area: main;
   padding: 1em;
@@ -81,8 +70,6 @@ main {
   display: none;
 }
 
-
-
 footer {
   grid-area: footer;
   border-top: 1px solid grey;
@@ -90,7 +77,7 @@ footer {
 }
 
 
-/* pages */
+
 .page {
    display: none;
 }
@@ -106,7 +93,6 @@ footer {
    "create create"
    "incomplete complete";
 }
-
 #todo .create-todo {
    grid-area: create;
    font-size: 1.5em;
@@ -128,7 +114,6 @@ footer {
    margin: 1rem 0;
    height: 50%;
 }
-
 #todo .incomplete {
    grid-area: incomplete;
    background: #FFD6D6;
@@ -138,25 +123,15 @@ footer {
    justify-content: flex-start;
    align-items: center;
    padding: 1rem;
-   
 }
-
 .todo i {
    margin-right: 1rem;
 }
-
 #todo .complete {
   grid-area: complete;
   background: #B9FFBB;
 }
 
-
-
-/* //page 2 */
-
-/* #Events {
-  display: block;
-} */
 
 .create-box {
    background: #F1F1F1;
@@ -164,14 +139,12 @@ footer {
    border-radius: 0.5rem;
    margin: 0.5rem 0;
 }
-
 .create-inputs {
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-template-areas:
    "inputs selects";
 }
-
 .create-inputs .inputs {
    grid-area: inputs;
    display: flex;
@@ -180,12 +153,9 @@ footer {
    align-items: left;
    font-size: 1em;
 }
-
-
 .create-inputs .event-select {
    grid-area: selects;
 }
-
 .create-box input {
     background: #FFFFFE;
     width: 90%;
@@ -197,8 +167,6 @@ footer {
     box-shadow: 0px 1px 4px #373737;
     margin: 0.5rem 0 1rem 0;
 }
-
-
 .button { 
    background: #3185FC;
    color: #fff;
@@ -210,7 +178,6 @@ footer {
 .button:active {
    background: #88B9FF;
 }
-
 .tool-head {
    font-size: 1.5rem;
    margin-bottom: 0.3rem;
@@ -221,7 +188,7 @@ hr {
    margin-bottom: 0.3rem;
 }
 
-/* Timeline */
+
 .events-timeline {
    background: #F4F4F4;
    margin: 1rem 0;
@@ -229,7 +196,6 @@ hr {
    border-radius: 0.5rem;
    width: 50%;
 }
-
 .event {
    background: #FFFFFF;
    display: flex;
@@ -246,23 +212,18 @@ hr {
 #event-year {
    font-size: 0.7em;
 }
-
-
 .event-box {
    width: 45%;
    padding: 0.8rem 0.5rem;
    font-size: 1.2em;
    font-weight: bold;
 }
-
 .event-box #eventType {
    
    font-size: 0.6em;
    font-weight: lighter;
    color: grey;
 }
-
-
 .event .icon-box {
    width: 20%;
    font-size: 1em;
@@ -272,7 +233,6 @@ hr {
 }
 
 
-/* working on sllyBus */
 .subjects-container {
    display: grid;
    grid-template-columns: 1fr 1fr;
@@ -284,13 +244,11 @@ hr {
    background: #fff;
    border-radius: 0.5rem;
 }
-
 .subject .sub-info {
    display: flex; 
    justify-content: space-between;
    align-items: center;
    padding: 0.5rem ;
-  
 }
 
 .subject .sub-icon {
@@ -300,8 +258,6 @@ hr {
    flex-direction: row-reverse;
    justify-content: space-between;
 }
-
-
 .subject .sub-info button {
    width: 2rem;
    height: 2rem;
@@ -312,12 +268,8 @@ hr {
    align-items: center;
 }
 .subject .sub-info .subjectName {
-   
    font-size: 2rem;
-   
 }
-
-
 .chapter-container {
    background: #F8F8F8;
    padding: 0.2rem 0.5rem;
@@ -337,16 +289,13 @@ hr {
    font-size: 1.2rem;
    border-radius: 0.5rem;
 }
-
 .chapter-info .revised {
    font-size: 0.6rem;
    color: #00AD06;
 }
-
 .chapter-info a {
    color: blue;
    font-size: 0.9rem;
-   
 }
 .chapter .icons {
    width: 30%;
@@ -358,25 +307,18 @@ hr {
 
 
 
-/* doubt jornal */
-
-
 .doubt-container {
-   
    display: grid;
    grid-template-columns: 1fr 1fr;
    padding: 1rem;
    gap: 1rem;
    background: #F1F1F1;
    border-radius: 0.5rem;
-   
 }
-
 .doubtJournal-create div {
    display: flex;
    align-items: center;
    justify-content: space-evenly;
-   
 }
 .doubtJournal-create div textarea {
    width: 90%;
@@ -386,16 +328,12 @@ hr {
    border: 0.5px solid black;
    box-shadow: 0px 1px 4px #373737;
    outline: 0;
-   
 }
-
-
 .doubt {
    background: #CFD5DF;
    border-radius: 0.5rem;
    border-bottom: 1px solid #5E98FF;
 }
-
 .doubt .doubt-sub {
   display: flex;
   justify-content: space-between;
@@ -414,8 +352,6 @@ hr {
    font-size: 1rem;
    background: black;
 }
-
-
 .doubt-info {
    background: #E0E0E0;
    padding: 0.5rem ;
@@ -432,24 +368,21 @@ hr {
    border: none;
    outline: 0;
 }
-
 .doubt-info #doubt-qus {
-   
    height: 2rem;
 }
 .doubt-info div {
-   
    padding: 0.5rem ;
    border-radius: 0.5rem;
 }
 
-/* link saver page */
+
+
 .link-container {
    background: #F1F1F1;
    padding: 1rem;
    border-radius: 0.5rem;
    margin: 0.5rem 0;
-   
 }
 .link {
    background: #FFFFFF;
@@ -463,15 +396,14 @@ hr {
    margin-top: 0.3rem;
    text-decoration: none;
 }
-
 .link p {
    display: inline;
    margin-right: 1rem;
 }
 
-/* home page */
+
+
 .home-details {
-   /* background: #FF0000; */
    padding: 0.5rem;
 }
 .home-details h3 {
@@ -493,7 +425,6 @@ hr {
 
 
 
-/* progress board */
 .progress-board {
    background: #EEEEEE;
    padding: 1rem;
@@ -501,7 +432,6 @@ hr {
    align-items: center;
    margin-bottom:1rem ;
 }
-
 .progress-board .wraper {
    background: red;
    width: 10rem;
@@ -510,7 +440,6 @@ hr {
    padding: 0.3rem;
    margin: 0 2rem ;
 }
-
 .progress-board .progress-pie {
    background: #848DE3;
    width: 10rem;
@@ -525,14 +454,6 @@ hr {
    padding: 0.5rem 1rem;
    border-left: 2px solid #8300FF;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -553,6 +474,7 @@ hr {
      width: 300px;
      left: -400px;
      transition: left 0.1s;
+     height: calc(100vh - 60.5px);
    } 
    .showSidebar {
      display: block;
@@ -567,30 +489,30 @@ hr {
    "incomplete"
    "complete";
    }
-   
    .create-inputs {
      grid-template-columns: 1fr;
      grid-template-areas: 
      "inputs"
      "selects";
    }
+   
    .events-timeline {
      width: auto;
    }
    .subjects-container {
      grid-template-columns: 1fr;
    }   
+   
    .doubtJournal-create div {
      display: inline-block;
    }
    .doubt-container {
      grid-template-columns: 1fr;
    }   
+   
    .home-details p {
     font-size: 1rem;
    }   
-   
-   
    
    .progress-board {
      display: block;
@@ -600,15 +522,11 @@ hr {
      width: 8rem;
      height: 8rem;
    }
-   
    .progress-board .progress-pie {
      width: 8rem;
      height: 8rem;
      font-size: 1.3rem;
    }
-
-
-   
 }
 
 
@@ -620,11 +538,9 @@ hr {
 .darkMode aside {
   background: #181818;
 }
-
 .darkMode .options-box {
   background: #2B2B26;
 }
-
 .darkMode .profile {
   background: #181818;
 }
@@ -639,7 +555,6 @@ hr {
 .darkMode #todo .complete {
    background: #195C21;
 }
-
 .darkMode .create-todo input[type=text] {
    border-bottom: 1.5px solid white;
    background: transparent;
@@ -658,7 +573,6 @@ hr {
   background: #B9E5F2;
   color: #000;
 }
-
 .darkMode .create-box {
    background: #34342E;
 }
@@ -668,17 +582,14 @@ hr {
    background: #34342E;
    border-radius: 0.5rem;
 }
-
 .darkMode .subject {
    background: #2B2B26;
 }
-
 .darkMode .chapter-container {
    background: #2B2B26 ;
    border-top: 2px solid #3C9FFF;
    color: #fff;
 }
-
 
 .darkMode .doubtJournal-create div textarea ,
 .darkMode .doubtJournal-create div input{
@@ -686,7 +597,6 @@ hr {
    color: #fff;
    border: 1px solid grey;
 }
-
 .darkMode .doubt-container {
    background: #34342E;
 }
@@ -697,17 +607,14 @@ hr {
 .darkMode .doubt a {
    color: #0095FF
 }
-
 .darkMode .doubt-info {
    background: #202020;
 }
-
 .darkMode .doubt-info textarea {
   background: #2B2B26;
   color: #C9C9C9;
   border: 1px solid #FFFFFF4D;
 }
-
 .darkMode .link-container {
    background: #34342E;
    
@@ -723,24 +630,12 @@ hr {
 .darkMode .highlight {
    color: #FFDA00;
 }
-
 .darkMode .progress-board {
   background: #353535;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .hide {
   display: none;
 } 
 
-/* Day 5 */
+/* -gg- */

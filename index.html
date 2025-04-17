@@ -19,7 +19,6 @@
     </button>
   </nav>
   
-  
   <aside class="sidebar">
     <div class="profile">
       <p id="userName">Naruto</p>
@@ -39,7 +38,6 @@
     </div>
     
     <div class="options-box">
-      
       <div onclick="changePage('todo')" class="option">
         <i class="fas fa-tasks"></i>
         <a>Todo</a>
@@ -52,12 +50,9 @@
         <i class="fas fa-folder-open"></i>
         <a>Sllybus</a>
       </div>
-      
-      
     </div>
     
     <div class="options-box">
-      
       <div onclick="changePage('doubtJournal')" class="option">
         <i class="fas fa-question"></i>
         <a> Doubt Journal </a>
@@ -66,27 +61,19 @@
         <i class="fas fa-paperclip"></i>
         <a>Links</a>
       </div>
-
-      
     </div>
-    
-    
   </aside>
   
   
   <main class="main">
-    
     <div class="page active" id="home">
-      
       <div class="home-details">
         <h3>Clear Path</h3>
         <p>Built by <span class="highlight">Anchor</span> in
-          just 7 days — a simple app
+          just 5 days — a simple app
           made to learn and explore
           the world of coding.
-          
-          
-        </p>
+          </p>
         <p>A simple, productive app designed (hopefully) to help students stay organized and focused.
           Clear features, clean design - made to make student life a bit easier.</p>
         <p>Check out the journey on YouTube: <a href="#">#youtube</a>
@@ -112,33 +99,22 @@
 
 
       <div class="create-todo">
-        
-
         <p class="tool-head">Add New Task</p>
         <input type="text" id="todo-input" placeholder="Type here...">
         <input onclick="addNewTodo()" type="button" value="Add" />
       </div>
       
       <div class="incomplete">
-        
       </div>
       <div class="complete">
-        
       </div>
     </div>
     
-    
-    
-    
     <div class="page inactive" id="Events">
-      
       <div class="create-box">
         <p class="tool-head">Add Event</p>
         <hr />
-        
-        
         <div class="create-inputs">
-          
           <div class="inputs">
             <p>Event</p>
             <input oninput="setWordLimit(eventNameInput, 10)" type="text" id="event-name" placeholder="Exam, Presentation etc." />
@@ -146,49 +122,38 @@
             <input oninput="setWordLimit(eventTypeInput, 10)" type="text" id="event-type" placeholder="Study, Work etc." />
           </div>
           
-          
           <div class="event-select">
             <p>Date</p>
             <input type="date" id="event-date" value="30/" />
-            
             <p>Color</p>
             <input type="color" id="event-color">
-            
           </div>
+          
           <div class="btn-box">
             <button onclick="addNewEvent()" class="button" id="eventBtn" type="submit">Add Event</button>
           </div>
         </div>
       </div>
-      
       <div class="events-timeline">
-        
       </div>
     </div>
     
-    
-    
     <div class="page inactive" id="sllybus">
-      
       <div class="create-box">
         <p class="tool-head">Add Sllybus</p>
         <hr />
         <div class="create-inputs">
-          
           <div class="inputs subPopup">
             <p>subject</p>
             <input oninput="setWordLimit(subjectNameInput, 10)" type="text" id="subject-name" placeholder="Exam, Presentation etc." />
-            
             <p>Color</p>
             <input type="color" id="subject-color">
-            
             <div class="btn-box">
               <button onclick="addNewSubject()" class="button" id="subjectBtn" type="submit">Add Subject</button>
             </div>
           </div>
           
           <div class="popup hide">
-            
             <div class="inputs">
               <p>Chapter</p>
               <input oninput="setWordLimit(chapterNameInput, 10)" type="text" id="chapter-name" placeholder="Chapetrs, Topics etc." />
@@ -209,10 +174,6 @@
         
       </div>
     </div>
-    
-    
-    
-    
     
     <div class="page inactive" id="doubtJournal">
       
@@ -235,18 +196,12 @@
       </div>
       
       
-      
       <div class="doubt-container">
         
       </div>
     </div>
     
-    
-    
-    
-    
     <div class="page inactive" id="links">
-      
       <div class="create-box">
         <p class="tool-head">Add New Link</p>
         <p>Title</p>
@@ -255,21 +210,10 @@
         <input type="text" id="link-input" placeholder="Write here.." />
         <button onclick="saveLink()" class="button" type="submit">Add</button>
       </div>
-      
       <div class="link-container">
         
       </div>
     </div>
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
   </main>
   
   <footer class="footer">
@@ -279,36 +223,8 @@
     </p>
   </footer>
   
-  
-  
-  
   <script src="main.js"></script>
 </body>
 
 </html>
-
-  <!--   delete box 
-  
-  
-  
-        <div onclick="changePage('attendanceTracker')" class="option">
-        <i class="fas fa-user-check"></i>
-        <a> Attendance Tracker </a>
-      </div>
-      <div class="page inactive" id="attendanceTracker">
-      <p>attendanceTracker</p>
-    </div>
-  
-
-
-      <div onclick="changePage('page4')" class="option">
-        <i class="fas fa-tasks"></i>
-        <a>page4</a>
-      </div>
-    <div class="page inactive" id="page4">
-      <p>page4</p>
-    </div>
-  
-  
-  -->
-    
+<!-- -gg- -->
