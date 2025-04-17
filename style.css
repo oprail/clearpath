@@ -85,7 +85,8 @@ main {
 
 footer {
   grid-area: footer;
-  background: lightcyan;
+  border-top: 1px solid grey;
+  padding: 1rem;
 }
 
 
@@ -468,7 +469,43 @@ hr {
    margin-right: 1rem;
 }
 
-/* page */
+/* home page */
+.home-details {
+   /* background: #FF0000; */
+   padding: 0.5rem;
+}
+.home-details h3 {
+   color: #0098FF;
+   text-align: center;
+   font-size: 2rem;
+   margin: 0.5rem 0;
+}
+.home-details p {
+   margin: 0.5rem 0;
+   font-size: 0.5rem;
+}
+.home-details a {
+   text-decoration: none;
+}
+.highlight {
+   color: #FF6A00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -521,6 +558,9 @@ hr {
    }
    .doubt-container {
      grid-template-columns: 1fr;
+   }   
+   .home-details p {
+    font-size: 1rem;
    }   
 }
 
@@ -628,14 +668,14 @@ hr {
 .darkMode .link {
    background: #242424;
 }
-.darkMode .link a {
+.darkMode .link a , 
+.darkMode .home-details a {
    color: #2099FF;
 }
 
-
-
-
-
+.darkMode .highlight {
+   color: #FFDA00;
+}
 
 
 
@@ -645,4 +685,4 @@ hr {
   display: none;
 } 
 
-/* Day 4 */
+/* Day 5 */

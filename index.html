@@ -22,14 +22,11 @@
   
   
   <aside class="sidebar">
-    
-    
     <div class="profile">
       <p id="userName">Naruto</p>
     </div>
-    
     <div class="options-box">
-      <div onclick="toggleDarkMode()" class="option">
+      <div onclick="changePage('home')" class="option">
         <i class="fas fa-home"></i>
         <a>Home</a>
       </div>
@@ -88,8 +85,27 @@
   <!-- Main content -->
   <main class="main">
     
-    <div class="page inactive" id="todo">
+    <div class="page active" id="home">
       
+      <div class="home-details">
+        <h3>Clear Path</h3>
+        <p>Built by <span class="highlight">Anchor</span> in
+          just 7 days — a simple app
+          made to learn and explore
+          the world of coding.
+          
+          
+        </p>
+        <p>A simple, productive app designed (hopefully) to help students stay organized and focused.
+          Clear features, clean design - made to make student life a bit easier.</p>
+        <p>Check out the journey on YouTube: <a href="#">#youtube</a>
+        </p>
+        <p>
+          Follow along for more projects, coding tips, and behind-the-scenes.</p>
+      </div>
+    </div>
+    
+    <div class="page inactive" id="todo">
       <div class="create-todo">
         <p class="tool-head">Add New Task</p>
         <input type="text" id="todo-input" placeholder="Type here...">
@@ -97,45 +113,12 @@
       </div>
       
       <div class="incomplete">
-        <div class="todo">
-          <i class="far fa-square"></i>
-          <p>School work</p>
-        </div>
-        <div class="todo">
-          <i class="far fa-square"></i>
-          <p>12345678901234567890</p>
-        </div>
-        <div class="todo">
-          <i class="far fa-square"></i>
-          <p>daily work</p>
-        </div>
-        <div class="todo">
-          <i class="far fa-check-square"></i>
-          <p>hard work</p>
-        </div>
+        
       </div>
-      
-      
       <div class="complete">
-        <div class="todo">
-          <i class="far fa-square"></i>
-          <p>School work</p>
-        </div>
-        <div class="todo">
-          <i class="far fa-square"></i>
-          <p>home work</p>
-        </div>
-        <div class="todo">
-          <i class="far fa-square"></i>
-          <p>daily work</p>
-        </div>
-        <div class="todo">
-          <i class="far fa-check-square"></i>
-          <p>hard work</p>
-        </div>
+        
       </div>
-      
-    </div> <!-- page end -->
+    </div>
     
     
     
@@ -172,57 +155,7 @@
       </div>
       
       <div class="events-timeline">
-        <div class="event">
-          <div class="date-box">
-            <p id="event-day">28 March</p>
-            <p id="event-year">2025</p>
-          </div>
-          <div class="event-box">
-            <p id="eventName">Event</p>
-            <p id="eventType">Type</p>
-            
-            
-          </div>
-          <div class="icon-box">
-            
-            <i onclick="deleteEvent(event)" class="fas fa-trash"></i>
-            <i onclick="editEvent(event)" class="fas fa-pen"></i>
-          </div>
-        </div>
-        <div class="event">
-          <div class="date-box">
-            <p id="event-day">28 March</p>
-            <p id="event-year">2025</p>
-          </div>
-          <div class="event-box">
-            <p id="eventName">Event</p>
-            <p id="eventType">Type</p>
-            
-            
-          </div>
-          <div class="icon-box">
-            
-            <i onclick="lo(event)" class="fas fa-trash"></i>
-            <i class="fas fa-pen"></i>
-          </div>
-        </div>
-        <div class="event">
-          <div class="date-box">
-            <p id="event-day">28 March</p>
-            <p id="event-year">2025</p>
-          </div>
-          <div class="event-box">
-            <p id="eventName">Event</p>
-            <p id="eventType">Type</p>
-            
-            
-          </div>
-          <div class="icon-box">
-            
-            <i onclick="lo(event)" class="fas fa-trash"></i>
-            <i class="fas fa-pen"></i>
-          </div>
-        </div>
+        
       </div>
     </div>
     
@@ -268,83 +201,8 @@
       
       <div class="subjects-container">
         
-        <div class="subject">
-          <div class="sub-info">
-            <p class="subjectName">Math</p>
-            
-            <div class="sub-icon">
-              
-              <button onclick="showPopup(event)" class="button" type="submit"><i class="fas fa-plus"></i></button>
-              <button class="button deleteBtn" type="submit">
-                <i onclick="html-273(event)" class="fas fa-trash">
-                </i>
-              </button>
-            </div>
-            
-          </div>
-          
-          
-          <div class="chapter-container">
-            
-            <div class="chapter">
-              <div class="chapter-info">
-                <p class="chapterName">Math</p>
-                <p class="revised">Rivesed . 2X</p>
-                <a href"https://meblank.netlify.app/">https://meblank...</a>
-              </div>
-              <div class="icons">
-                
-                <i class="far fa-square"></i>
-                
-                <i class="fas fa-book"></i>
-                
-                <i onclick="lo260(event)" class="fas fa-trash"></i>
-              </div>
-            </div>
-            
-            <!-- here.. -->
-            
-            <div class="chapter">
-              <div class="chapter-info">
-                <p class="chapterName">Math</p>
-                <p class="revised">Rivesed . 2X</p>
-                <a href"https://meblank.netlify.app/">https://meblank...</a>
-              </div>
-              <div class="icons">
-                
-                <i class="far fa-square"></i>
-                
-                <i class="fas fa-book"></i>
-                
-                <i onclick="lo260(event)" class="fas fa-trash"></i>
-              </div>
-            </div>
-            <div class="chapter">
-              <div class="chapter-info">
-                <p class="chapterName">Math</p>
-                <p class="revised">Rivesed . 2X</p>
-                <a href"https://meblank.netlify.app/">https://meblank...</a>
-              </div>
-              <div class="icons">
-                
-                <i class="far fa-square"></i>
-                
-                <i class="fas fa-book"></i>
-                
-                <i onclick="lo260(event)" class="fas fa-trash"></i>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -368,51 +226,13 @@
           </button>
         </div>
       </div>
+      
+      
+      
       <div class="doubt-container">
         
-        <div class="doubt">
-          
-          <div class="doubt-sub">
-            <p class="doubtSubjectName">Math</p>
-            <button class="button deleteBtn" type="submit">
-              <i onclick="html-273(event)" class="fas fa-trash"></i>
-            </button>
-          </div>
-          
-          <div class="doubt-info">
-            
-            <textarea id="doubt-qus" readonly>Question : 2 + 2
-    </textarea>
-            <textarea readonly>Doubt : IDK
-    </textarea>
-            <textarea readonly>Solution : 2 + 2 = 4
-    </textarea>
-            <div id="doubtLink">
-              <a href="https://github.com/oprail/learning2025-test">https://github.com/oprail/learning</a>
-            </div>
-            
-          </div>
-          
-          
-        </div>
-        
-        
       </div>
-      
-      
-      
-      
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -422,21 +242,22 @@
     
     
     <div class="page inactive" id="links">
-     <div class="create-box">
-       <p>Title</p>
+      
+      <div class="create-box">
+        <p>Title</p>
         <input oninput="setWordLimit(linkTitleInput, 10)" type="text" id="title-input" placeholder="Write here.." />
         <p>Link</p>
         <input type="text" id="link-input" placeholder="Write here.." />
         <button onclick="saveLink()" class="button" type="submit">Add</button>
-     </div>
-     <div class="link-container">
-       <div class="link">
-         <p>Ti12345678</p>
-         <i onclick="removeLink(event)" class="fas fa-trash"></i>
-         <a href="https://github.com/oprail/learning2025-test">https://github.com/oprail/learning2025-test</a>
-       </div>
-     </div>
-   </div>
+      </div>
+      
+      <div class="link-container">
+        
+      </div>
+    </div>
+    
+    
+    
     
     
     
@@ -449,7 +270,10 @@
   </main>
   
   <footer class="footer">
-    footer
+    <p>© 2025 Anchor. All rights reserved.
+      This app was created for learning and personal use. Any similarities to existing products are purely coincidental.
+      Clear Path does not collect personal data or track users.
+    </p>
   </footer>
   
   
@@ -460,3 +284,4 @@
 
 </html>
 
+go.............
