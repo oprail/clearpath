@@ -493,11 +493,39 @@ hr {
 
 
 
+/* progress board */
+.progress-board {
+   background: #EEEEEE;
+   padding: 1rem;
+   display: flex;
+   align-items: center;
+   
+}
 
+.progress-board .wraper {
+   background: #002FFF;
+   background: linear-gradient(120deg, #1BFF00 80%, red 20%);
+   width: 10rem;
+   height: 10rem;
+   border-radius: 50%;
+   padding: 0.3rem;
+   margin: 0 2rem ;
+}
 
-
-
-
+.progress-board .progress-pie {
+   background: #848DE3;
+   width: 10rem;
+   height: 10rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.6rem;
+   border-radius: 50%;
+}
+.progress-board .stats {
+   padding: 0.5rem 1rem;
+   border-left: 2px solid #8300FF;
+}
 
 
 
@@ -562,6 +590,26 @@ hr {
    .home-details p {
     font-size: 1rem;
    }   
+   
+   
+   
+   .progress-board {
+     display: block;
+   }
+   .progress-board .wraper {
+     margin: 1rem 0;
+     width: 8rem;
+     height: 8rem;
+   }
+   
+   .progress-board .progress-pie {
+     width: 8rem;
+     height: 8rem;
+     font-size: 1.3rem;
+   }
+
+
+   
 }
 
 
@@ -676,6 +724,17 @@ hr {
 .darkMode .highlight {
    color: #FFDA00;
 }
+
+.darkMode .progress-board {
+  background: #353535;
+}
+
+
+
+
+
+
+
 
 
 

@@ -51,7 +51,7 @@ const linkContainer = document.querySelector(".link-container");
 
 
 // variable
-let darkMode = true;
+let darkMode = false;
 let letterLimit = 2;
 let subTarget;
 
