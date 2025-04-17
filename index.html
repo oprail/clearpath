@@ -20,7 +20,6 @@
   </nav>
   
   
-  
   <aside class="sidebar">
     <div class="profile">
       <p id="userName">Naruto</p>
@@ -63,18 +62,11 @@
         <i class="fas fa-question"></i>
         <a> Doubt Journal </a>
       </div>
-      <div onclick="changePage('attendanceTracker')" class="option">
-        <i class="fas fa-user-check"></i>
-        <a> Attendance Tracker </a>
-      </div>
       <div onclick="changePage('links')" class="option">
         <i class="fas fa-paperclip"></i>
         <a>Links</a>
       </div>
-      <div onclick="changePage('page4')" class="option">
-        <i class="fas fa-tasks"></i>
-        <a>page4</a>
-      </div>
+
       
     </div>
     
@@ -82,31 +74,7 @@
   </aside>
   
   
-  <!-- Main content -->
   <main class="main">
-
-<!-- <div class="progress-board">
-  <div class="wraper">
-    <div class="progress-pie">
-      <p>50%</p>
-    </div>
-  </div>
-  <div class="stats">
-    here comes stats.
-  </div>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
     
     <div class="page active" id="home">
       
@@ -202,7 +170,6 @@
     
     <div class="page inactive" id="sllybus">
       
-      <p>Sllybus</p>
       <div class="create-box">
         <p class="tool-head">Add Sllybus</p>
         <hr />
@@ -250,6 +217,7 @@
     <div class="page inactive" id="doubtJournal">
       
       <div class="create-box doubtJournal-create">
+        <p class="tool-head">Add New Doubt</p>
         <div>
           <input type="text" id="doubt-subject" placeholder="subject" />
           <input type="text" name="" id="doubt-question" placeholder="question" />
@@ -275,14 +243,12 @@
     
     
     
-    <div class="page inactive" id="attendanceTracker">
-      <p>attendanceTracker</p>
-    </div>
     
     
     <div class="page inactive" id="links">
       
       <div class="create-box">
+        <p class="tool-head">Add New Link</p>
         <p>Title</p>
         <input oninput="setWordLimit(linkTitleInput, 10)" type="text" id="title-input" placeholder="Write here.." />
         <p>Link</p>
@@ -298,13 +264,11 @@
     
     
     
+
     
     
     
     
-    <div class="page inactive" id="page4">
-      <p>page4</p>
-    </div>
     
   </main>
   
@@ -323,3 +287,28 @@
 
 </html>
 
+  <!--   delete box 
+  
+  
+  
+        <div onclick="changePage('attendanceTracker')" class="option">
+        <i class="fas fa-user-check"></i>
+        <a> Attendance Tracker </a>
+      </div>
+      <div class="page inactive" id="attendanceTracker">
+      <p>attendanceTracker</p>
+    </div>
+  
+
+
+      <div onclick="changePage('page4')" class="option">
+        <i class="fas fa-tasks"></i>
+        <a>page4</a>
+      </div>
+    <div class="page inactive" id="page4">
+      <p>page4</p>
+    </div>
+  
+  
+  -->
+    

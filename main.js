@@ -45,7 +45,11 @@ const linkContainer = document.querySelector(".link-container");
 
 const todoProgress = document.querySelector(".todo-progress");
 
-// const Progress = document.querySelector(".");
+
+// save data to local storage
+
+
+
 // const Progress = document.querySelector(".");
 // const Progress = document.querySelector(".");
 // const Progress = document.querySelector(".");
@@ -87,20 +91,18 @@ let events = [];
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 window.onload = function() {
    eventDateInput.valueAsDate = new Date();
    changeMode();
+   
+   
+   // imp
+   displayTodoData();
+   displaySllybusData();
+   displayDoubtData();
+   displayLinkData();
+   displayEventData();
+   
 }
 
 
@@ -166,6 +168,7 @@ function setWordLimit(input, limit) {
 
 function addNewTodo() {
    
+   
    if (todoInput.value == "") {
      alert("Write Todo");
      return;
@@ -191,6 +194,7 @@ function addNewTodo() {
    
    
    updateTodoStats();
+   saveTodoData();
 }
 
 
@@ -211,6 +215,7 @@ function checkTodo(e) {
     
     
     updateTodoStats();
+    saveTodoData();
    }
 }
 
@@ -232,6 +237,7 @@ function unCheckTodo(e) {
    }
    
    updateTodoStats();
+   saveTodoData();
 }
 
 function deleteTodo(e) {
@@ -247,7 +253,19 @@ function deleteTodo(e) {
    }
    
    updateTodoStats();
+   saveTodoData();
 }
+
+
+
+
+
+
+
+
+
+// event
+
 
 
 function addNewEvent() {
@@ -329,7 +347,8 @@ function displayTimeline() {
    
    events.forEach((event) => {
      eventsTimeline.prepend(event.eventEl);
-   })
+   });
+   saveEventData();
 }
 
 function deleteEvent(e) {
@@ -351,7 +370,7 @@ function deleteEvent(e) {
    })
    
    
-   
+   saveEventData();
 }
 function editEvent(e) {
    
@@ -369,6 +388,8 @@ function editEvent(e) {
    events.splice(events.indexOf(event), 1);
    target.remove();
    
+   
+   saveEventData();
 }
 
 
@@ -386,9 +407,9 @@ function hidePopup() {
 }
 
 
+
+
 // Working On Sllybus 
-
-
 
 function addNewSubject() {
    
@@ -420,6 +441,9 @@ function addNewSubject() {
    subjectDiv.innerHTML = subjectBoxHtml;
    
     subjectsContainer.prepend(subjectDiv);
+    
+    
+    saveSllybusData();
 }
 
 
@@ -436,6 +460,7 @@ function deleteSubject(e) {
      target.remove();
    }
    
+   saveSllybusData();
 }
 
 function addNewChapter(param) {
@@ -471,6 +496,7 @@ function addNewChapter(param) {
    
    chapterContainer.prepend(chapterDiv);
    
+   saveSllybusData();
 }
 
 
@@ -487,6 +513,8 @@ function deleteChapter(e) {
   if (confirmRemoval) {
     target.remove();
   }
+  
+  saveSllybusData();
 }
 
 
@@ -507,6 +535,8 @@ function chapterCompleted(e) {
      target.id = "incomplete";
    }
    
+   
+   saveSllybusData();
 }
 
     
@@ -535,11 +565,17 @@ function addRevision(e) {
    
    setTimeout(()=> {revisedP.style.fontSize = "0.6rem";},300);
    
+   
+   saveSllybusData();
 }
 
 
-// Doubt page 
 
+
+
+
+
+// Doubt page 
 function addNewDoubt() {
    
    
@@ -584,8 +620,9 @@ function addNewDoubt() {
    doubtSolutionInput.value = "";
    solutionLinkInput.value = "";
    
+   
+   saveDoubtData();
 }
-
 
 function deleteDoubt(e) {
    let target = e.target.parentElement.parentElement.parentElement;
@@ -595,12 +632,13 @@ function deleteDoubt(e) {
    if (confirmRemoval) {
      target.remove();
    }
+   
+   saveDoubtData();
 }
 
 
 
-
-
+// link saver
 function saveLink() {
    
    
@@ -622,6 +660,7 @@ function saveLink() {
    linkTitleInput.value = "";
    linkInput.value = "";
    
+   saveLinkData();
 }
 
 function removeLink(e) {
@@ -634,10 +673,21 @@ function removeLink(e) {
     target.remove();
    }   
    
+   saveLinkData();
 }
 
 
 
+
+
+
+
+
+
+
+
+
+// progress bar 
 function updateTodoStats() {
    
    
@@ -668,6 +718,156 @@ function updateTodoStats() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// saving data
+function saveTodoData() {
+   
+  localStorage.removeItem("incompleteTodoData");
+  localStorage.removeItem("completeTodoData");
+   
+  localStorage.setItem("incompleteTodoData", incompleteTodoBox.innerHTML);
+  localStorage.setItem("completeTodoData", completeTodoBox.innerHTML);
+   
+  // displayData();
+   
+}
+function displayTodoData() {
+   
+   
+  if (localStorage.getItem("incompleteTodoData") === undefined && localStorage.getItem("completeTodoData") === undefined) {
+    return;
+  }
+   
+  console.log("seted")
+  incompleteTodoBox.innerHTML = localStorage.getItem("incompleteTodoData");
+   
+   
+  completeTodoBox.innerHTML = localStorage.getItem("completeTodoData");
+   
+}
+
+
+
+
+
+
+// sllybus data
+function saveSllybusData() {
+  
+  localStorage.removeItem("sllybusData");
+  
+  
+  localStorage.setItem("sllybusData", subjectsContainer.innerHTML);
+  
+  
+  // displayData();
+  
+}
+
+function displaySllybusData() {
+  
+  let data = localStorage.getItem("sllybusData");
+  
+  console.log(data)
+  
+  if (data === null) {
+    return;
+  }
+  
+  subjectsContainer.innerHTML = data;
+  
+}
+
+
+
+// Doubt data
+function saveDoubtData() {
+  
+  localStorage.removeItem("doubtData");
+  
+  
+  localStorage.setItem("doubtData", doubtContainer.innerHTML);
+  
+  
+  // displayData();
+  
+}
+
+function displayDoubtData() {
+  
+  let data = localStorage.getItem("doubtData");
+  
+  console.log(data)
+  
+  if (data === null) {
+    return;
+  }
+  
+  doubtContainer.innerHTML = data;
+}
+
+// link data
+function saveLinkData() {
+  
+  localStorage.removeItem("linkData");
+  
+  
+  localStorage.setItem("linkData", linkContainer.innerHTML);
+  
+  
+  // displayData();
+  
+}
+
+function displayLinkData() {
+  
+  let data = localStorage.getItem("linkData");
+  
+  
+  if (data === null) {
+    return;
+  }
+  
+  linkContainer.innerHTML = data;
+}
+
+
+// event data
+function saveEventData() {
+  
+  localStorage.removeItem("eventData");
+  
+  
+  localStorage.setItem("eventData", eventsTimeline.innerHTML);
+  
+  
+  // displayData();
+  
+}
+
+function displayEventData() {
+  
+  let data = localStorage.getItem("eventData");
+  
+  
+  if (data === null) {
+    return;
+  }
+  
+  eventsTimeline.innerHTML = data;
+}
 
 
 
