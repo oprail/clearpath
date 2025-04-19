@@ -80,6 +80,7 @@ window.onload = function() {
    userNameP.innerText = userName;
    
    displayTodoData();
+   updateTodoStats();
    displaySllybusData();
    displayDoubtData();
    displayLinkData();
@@ -403,7 +404,7 @@ function addNewChapter(param) {
    let chapterBoxHtml = `<div class="chapter-info">
      <p class="chapterName">${chapterNameInput.value}</p>
      <p class="revised" id="0">Rivesed 0x</p>
-     <a href"${chapterLinkInput.value}">${shortDisplayLink}...</a>
+     <a href="${chapterLinkInput.value}">${shortDisplayLink}...</a>
    </div>
    <div class="icons">
      <i onclick="chapterCompleted(event)" class="far fa-square"></i>
